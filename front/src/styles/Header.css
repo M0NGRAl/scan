@@ -1,0 +1,75 @@
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: white;
+}
+
+
+.logo-image {
+    padding: 0px 0px 0px 50px;
+    width: 180px;
+    height: auto;
+}
+
+
+.nav-links {
+    display: flex;
+    gap: 60px;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: black;
+    font-size: 26px;
+    transition: transform 0.3s ease;
+}
+
+.nav-link:hover {
+    transform: scale(1.1);
+}
+
+
+.auth-buttons {
+    padding: 0px 50px 0px 0px;
+    display: flex;
+    align-items: center; /* Выравнивание по центру */
+    gap: 15px; /* Пространство между элементами */
+}
+
+.auth-link {
+    text-decoration: none;
+    color: gray;
+    font-size: 22px;
+    transition: transform 0.3s ease; /* Анимация для плавного увеличения */
+}
+
+.auth-link:hover {
+    transform: scale(1.1); /* Увеличение размера при наведении */
+}
+
+
+/* Стили для разделительной линии */
+.separator-line {
+    width: 3px;
+    height: 55px;
+    background-color: rgb(103, 191, 189);
+}
+
+/* Стили для кнопки "Войти" */
+.auth-button {
+    background-color: rgb(103, 191, 189); /* Цвет кнопки */
+    color: black; /* Цвет текста */
+    border: none; /* Без границы */
+    padding: 8px 16px; /* Внутренние отступы */
+    font-size: 23px; /* Размер шрифта */
+    cursor: pointer; /* Изменение курсора при наведении */
+    border-radius: 20px; /* Закругление углов */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Анимация для плавного увеличения и изменения цвета */
+}
+
+.auth-button:hover {
+    transform: scale(1.1); /* Увеличение размера при наведении */
+    background-color: rgb(83, 161, 159); /* Изменение цвета при наведении */
+}

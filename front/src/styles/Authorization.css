@@ -1,0 +1,212 @@
+.authorization {
+    display: flex;
+    padding: 30px 0px 0px 0px;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+/* Контейнер для контента */
+.content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex: 0.6;
+    background-color: #fff;
+    padding: 0px 0px 0px 50px;
+    border-radius: 8px;
+
+}
+
+
+
+/* Секция с текстом */
+.text-content {
+    display: flex;
+    justify-content: flex-start;
+    text-align: left;
+    margin-right: auto;
+}
+
+.text-content h2{
+    font-size: 70px;
+}
+
+/* Секция с изображением */
+.image-section {
+    padding: 0px 0px 0px 150px;
+    flex: 1;
+    text-align: center;
+
+
+}
+
+.authorization_image {
+    width: 75%;
+    height: auto;
+    background-color: transparent;
+}
+
+/* Стили для изображения замка */
+.image-lock {
+    display: flex;
+    align-items: flex-start;
+    background-color: transparent;
+    padding: 0px 0px 0px 30px;
+    margin-bottom: auto;
+}
+
+/* Контейнер для формы входа */
+.login-container {
+    flex: 0.4; /* 35% ширины */
+    border-radius: 8px;
+    background-color: white;
+    border: none;
+    text-align: center;
+    padding: 100px 10px 0px 10px; /* Убедитесь, что padding симметричен */
+    margin-bottom: auto;
+    box-sizing: border-box; /* Добавлено */
+}
+
+/* Группа кнопок Войти/Зарегистрироваться */
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 40px;
+    max-width: 500px
+}
+
+.button-group button {
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    ;
+}
+
+.login-button {
+    color: #029491;
+    background-color: transparent;
+    border: none;
+    border-bottom: 4px solid #029491;
+    padding: 10px 0;
+    font-size: 16px;
+    flex: 0.7; /* Кнопка "Войти" занимает меньше места */
+    margin-right: 30px; /* Отступ между кнопками */
+}
+
+.register-button {
+    background-color: transparent;
+    border: none;
+    color: #808080;
+    padding: 10px 0;
+    font-size: 16px;
+    flex: 1; /* Кнопка "Зарегистрироваться" занимает оставшееся пространство */
+    border-bottom: 4px solid #808080;
+}
+
+
+
+
+/* Поля ввода */
+.placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 20px;
+    box-sizing: border-box; /* Добавлено */
+}
+
+.placeholder p{
+    color: #808080;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.placeholder input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box; /* Добавлено */
+    text-align: left; /* Добавлено */
+}
+
+.placeholder button {
+    width: 100%;
+    height: 55px;
+    padding: 10px;
+    background-color: #5970ff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.placeholder button:disabled {
+    background-color: #acb8ff; /* Серый цвет для неактивной кнопки */
+    cursor: not-allowed; /* Курсор "недоступно" */
+}
+
+/* Ссылка на восстановление пароля */
+.links {
+    max-width: 500px;
+    margin: 15px 0;
+}
+
+.links a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+/* Социальные кнопки */
+.social-login {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 500px;
+    margin-top: 20px;
+}
+
+.social-login p {
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: #555;
+}
+
+.social-buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 17px;
+
+}
+
+.social-buttons button {
+    width: 100%;
+    padding: 10px 20px 10px 20px;
+    margin-bottom: 10px;
+    border: 1px solid #aab6ff;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.social-buttons button img {
+    width: 70px; /* Размер иконок */
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+.social-buttons button:hover img {
+    transform: scale(1.1); /* Увеличение иконок при наведении */
+}

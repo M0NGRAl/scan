@@ -1,0 +1,54 @@
+.search_date-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 50px 0px 0px;
+    margin: 0px;
+    background-color: white;
+
+}
+
+.information {
+    padding: 0px 0px 0px 50px;
+}
+
+.information h1{
+    color: black;
+    text-transform: uppercase;
+    font-size: 60px;
+    font-weight: bold;
+    padding: 0px 0px 0px 0px;
+}
+
+.information p{
+    font-size: 25px;
+    padding: 0px 0px 40px 0px;
+}
+
+.search-button {
+    background-color: #5970ff;
+    color: white;
+    padding: 10px 20px;
+    font-size: 25px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.search-button:hover {
+    background-color: #3a57c4;
+    transform: scale(1.05);
+}
+
+.search-button:active {
+    background-color: #3349a3; /* Ещё более тёмный синий при нажатии */
+    transform: scale(0.98);
+}
+
+.search-image{
+    width: 900px;
+    height: auto;
+    padding: 0px 50px 0px 50px;
+}

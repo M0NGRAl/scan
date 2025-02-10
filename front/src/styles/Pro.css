@@ -1,0 +1,80 @@
+.tariff.pro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.tariff.pro .tariff-header{
+    width: 95%;
+    height: 25%;
+    padding: 10px 0px 10px 25px;
+    display: flex;
+    background-color: #7ce3e1;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px; ;
+}
+
+.tariff.pro:hover {
+    transform: translateY(-5px);
+}
+
+.tariff.pro h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.tariff.pro .tariff-header p {
+    margin: 0;
+    font-size: 20px;
+}
+
+.tariff.pro .tariff-header .header-info {
+    margin: 0;
+    padding: 0px 0px 0px 0px;
+}
+
+.tariff.pro .price-info{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+
+}
+
+.tariff.pro .price-info .price {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.tariff.pro .price-info .old-price {
+    font-size: 18px;
+    color: gray;
+    text-decoration: line-through;
+}
+
+.tariff.pro .features {
+    margin-top: 10px;
+    list-style: none;
+    padding: 0;
+}
+
+.tariff.pro .features li {
+    font-size: 14px;
+    color: #444;
+    padding: 5px 0;
+}
+
+.tariff.pro button {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    padding: 10px 80px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #5970ff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

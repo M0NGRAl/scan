@@ -1,0 +1,78 @@
+.tariff.business {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.tariff.business:hover {
+    transform: translateY(-5px);
+}
+
+.tariff.business .tariff-header{
+    width: 95%;
+    height: 25%;
+    padding: 10px 0px 10px 25px;
+    display: flex;
+    align-content: space-between;
+    background-color: black;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px; ;
+}
+
+.tariff.business h2 {
+    color: #212121;
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.tariff.business .tariff-header p {
+    margin: 0;
+    font-size: 20px;
+}
+
+
+.tariff.business .price-info{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    padding: 0px 0px 20px 0px;
+}
+
+.tariff.business .price-info .price {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.tariff.business .price-info .old-price {
+    font-size: 18px;
+    color: gray;
+    text-decoration: line-through;
+}
+
+.tariff.business .features {
+    margin-top: 10px;
+    list-style: none;
+    padding: 0;
+}
+
+.tariff.business .features li {
+    font-size: 14px;
+    color: #444;
+    padding: 5px 0;
+}
+
+.tariff.business button {
+    margin-top: 15px;
+    margin-bottom: 10px;
+    padding: 10px 80px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #5970ff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
