@@ -2,21 +2,21 @@ import React from "react";
 import logo from "../images/logo.png";
 import '../styles/Header.css'
 
-const Header = () => {
+const Header = ({onShowAuthorization, onShowMain}) => {
     return (
         <div className="header-container">
             <div className="logo-section">
                 <img src={logo} alt="logo" className="logo-image" />
             </div>
             <div className="nav-links">
-                <a href="/" className="nav-link">Главная</a>
-                <a href="/" className="nav-link">Тарифы</a>
-                <a href="/" className="nav-link">FAQ</a>
+                <a href="/" className="nav-link" onClick={onShowMain}>Главная</a>
+                <a href="#" className="nav-link">Тарифы</a>
+                <a href="#" className="nav-link">FAQ</a>
             </div>
             <div className="auth-buttons">
-                <a href="/" className="auth-link">Зарегистрироваться</a>
+                <a href="#" className="auth-link">Зарегистрироваться</a>
                 <span className="separator-line"></span>
-                <button className="auth-button">Войти</button>
+                <button className="auth-button" onClick={onShowAuthorization}>Войти</button>
             </div>
         </div>
     );
