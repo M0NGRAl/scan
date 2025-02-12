@@ -4,6 +4,7 @@ import WhyWe from "./main_screen/Why_we.js";
 import main_image from '../../images/why_we.png'
 import '../../styles/Main.css'
 import OurRates from "./main_screen/Our_rates.js";
+import Search_result from "../search_result/Search_result.js";
 
 const Main = ({onShowSearch}) => {
     return (

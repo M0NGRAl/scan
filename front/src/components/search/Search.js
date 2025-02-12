@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import "../../styles/Search.css";
 import list_image from '../../images/search/list.png';
 import folders_image from '../../images/search/folders.png';

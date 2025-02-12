@@ -4,8 +4,8 @@ import Search_result_image from '../../images/search_result.png'
 
 const Search_result = () => {
     return (
-        <div className="Search-result">
-            <div className="Search-result-header">
+        <div className="search-result">
+            <div className="search-result-header">
                 <div className="text-content">
                     <h1>
                         Ищем. Скоро
@@ -19,17 +19,20 @@ const Search_result = () => {
                     </p>
                 </div>
                 <div className="image-section">
-                    <img src={Search_result_image} alt="img" className="Search-result-image"/>
+                    <img src={Search_result_image} alt="img" className="search-result-image"/>
                 </div>
             </div>
             <div className='general-summary'>
                 <h2>
                     Общая сводка
                 </h2>
-                <p>Найдено</p>
                 <div className='summary-carousel'></div>
             </div>
-            <div className="list-of-documents"></div>
+            <div className="list-of-documents">
+                <h2>
+                    Список документов
+                </h2>
+            </div>
         </div>
     )
 }

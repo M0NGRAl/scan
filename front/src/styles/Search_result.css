@@ -1,0 +1,52 @@
+.search-result {
+    display: flex;
+    flex-direction: column;
+}
+
+.search-result-header {
+    display: flex;
+    flex-direction: row;
+    padding: 30px 0px 0px 50px;
+}
+
+.search-result-header .text-content{
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0px 0px 0px
+}
+
+.search-result-header .text-content h1{
+    font-size: 70px;
+    padding: 0px;
+}
+
+.search-result-header .text-content{
+    font-size: 40px;
+}
+
+.image-section{
+    display: flex;
+    justify-content: center;
+}
+
+.search-result-image {
+    height: 80%;
+    width: auto;
+
+}
+
+.general-summary{
+    padding: 50px 0px 0px 50px
+}
+
+.general-summary h2{
+    font-size: 60px;
+}
+
+.list-of-documents {
+    padding: 50px 0px 0px 50px
+}
+
+.list-of-documents h2{
+    font-size: 60px;
+}

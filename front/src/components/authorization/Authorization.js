@@ -1,16 +1,21 @@
-import React, { useState } from "react";
+import React, {useContext, useState} from "react";
+import { useNavigate } from "react-router-dom";
 import Authorization_image from '../../images/authorization/authorization.png';
 import '../../styles/Authorization.css';
 import Lock_image from "../../images/authorization/lock.png";
 import Google_image from "../../images/authorization/google.png";
 import Facebook_image from "../../images/authorization/facebook.png";
 import Yandex_image from "../../images/authorization/yandex.png";
+import {AuthContext} from "../context/AuthContext.js";
 
 const Authorization = () => {
     const [login, setLogin] = useState("");
     const [password, setPassword] = useState("");
     const [loginError, setLoginError] = useState(false);
     const [passwordError, setPasswordError] = useState(false);
+    const [isLoading, setIsLoading] = useState(false);
+    const navigate = useNavigate();
+    const {login: authLogin} = useContext(AuthContext);
 
     const phoneRegex = /^[\+]?[0-9]{10,15}$/; // Номер телефона
     const loginRegex = /^[a-zA-Z0-9_]{3,20}$/; // Логин
@@ -20,11 +25,11 @@ const Authorization = () => {
         setLogin(value);
 
         if (!value) {
-            setLoginError(true); // Если поле пустое
+            setLoginError(true);
         } else if (!phoneRegex.test(value) && !loginRegex.test(value)) {
-            setLoginError(true); // Если не соответствует формату
+            setLoginError(true);
         } else {
-            setLoginError(false); // Если все ок
+            setLoginError(false);
         }
     };
 
@@ -33,9 +38,9 @@ const Authorization = () => {
         setPassword(value);
 
         if (!value) {
-            setPasswordError(true); // Если поле пустое
+            setPasswordError(true);
         } else {
-            setPasswordError(false); // Если все ок
+            setPasswordError(false);
         }
     };
 
@@ -43,11 +48,43 @@ const Authorization = () => {
 
     const handleSubmit = () => {
         if (isFormValid) {
-            console.log("Логин:", login);
-            console.log("Пароль:", password);
-            // Здесь можно добавить логику отправки данных на сервер
+            setIsLoading(true);
+
+            fetch('https://gateway.scan-interfax.ru/api/v1/account/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    login: login,
+                    password: password,
+                }),
+            })
+                .then((response) => {
+                    if (!response.ok) {
+                        throw new Error(`Ошибка HTTP: ${response.status}`);
+                    }
+                    return response.json();
+                })
+                .then((data) => {
+                    console.log('Ответ от сервера:', data);
+                    if (data.token) {
+                        localStorage.setItem('token', data.token);
+                    }
+                    navigate("/");
+                    authLogin()
+                })
+                .catch((error) => {
+                    console.error('Ошибка:', error);
+                    setPasswordError(true);
+                    setLoginError(true);
+                })
+                .finally(() => {
+                    setIsLoading(false);
+                });
         } else {
-            alert("Пожалуйста, исправьте ошибки в форме.");
+            setPasswordError(true);
+            setLoginError(true);
         }
     };
 
@@ -94,7 +131,9 @@ const Authorization = () => {
                         autoComplete="on"
                     />
                     {passwordError && <p style={{ color: 'red', fontSize: '14px' }}>Неверный пароль</p>}
-                    <button onClick={handleSubmit} disabled={!isFormValid}>Войти</button>
+                    <button onClick={handleSubmit} disabled={!isFormValid || isLoading}>
+                        {isLoading ? 'Загрузка...' : 'Войти'}
+                    </button>
                 </div>
                 <div className="links">
                     <a href="#">Восстановить пароль</a>
