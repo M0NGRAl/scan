@@ -1,0 +1,38 @@
+.search {
+    display: flex;
+    flex-direction: column;
+}
+
+.search-header {
+    display: flex;
+    flex-direction: row;
+    padding: 50px 0px 0px 50px;
+}
+
+.search-header .text-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.search-header .text-content h2{
+    margin: 0px;
+    text-transform: uppercase;
+}
+
+.images-section {
+    display: flex;
+    flex-direction: row;
+    gap: 300px;
+    padding-right: 100px;
+    padding-top: 50px;
+}
+
+.list_image {
+    width: 100px;
+    height: 100px;
+}
+
+.folders_image {
+    width: 130px;
+    height: 80px
+}

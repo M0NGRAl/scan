@@ -4,6 +4,7 @@ import "../../styles/Search.css";
 import list_image from '../../images/search/list.png';
 import folders_image from '../../images/search/folders.png';
 import { validateInn } from './validateInn.js';
+import main_image from '../../images/search/main_search.png';
 
 const Search = () => {
     const [inn, setInn] = React.useState('');
@@ -20,12 +21,14 @@ const Search = () => {
         <div className="search">
             <div className='search-header'>
                 <div className="text-content">
-                    <h2>найдите необходимую информацию в пару кликов</h2>
+                    <h2>найдите необходимые
+                        <br/>
+                        данные в пару кликов</h2>
                     <p>Задайте параметры поиска.<br />Чем больше заполните, тем точнее поиск</p>
                 </div>
                 <div className='images-section'>
-                    <img src={list_image} alt="img" className="search-image" />
-                    <img src={folders_image} alt="img" className="search-image" />
+                    <img src={list_image} alt="img" className="list_image" />
+                    <img src={folders_image} alt="img" className="folders_image" />
                 </div>
             </div>
             <div className="search-content">
@@ -104,7 +107,9 @@ const Search = () => {
                         </label>
                     </div>
                 </div>
-                <div className="image-section"></div>
+                <div className="main-image-section">
+                    <img src={main_image} alt="img" className="main-image" />
+                </div>
             </div>
         </div>
     );
