@@ -43,6 +43,155 @@
     font-size: 60px;
 }
 
+.histograms-container {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Расстояние между стрелочками и гистограммами */
+    position: relative;
+
+}
+
+.loader-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.circle-spinner {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle-spinner .dot {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: gray;
+    border-radius: 50%;
+    animation: circle-rotate 1.2s linear infinite;
+    transform-origin: 50% 50%;
+}
+
+/* Расположение точек по кругу */
+.circle-spinner .dot {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(calc(var(--i) * 45deg)) translateY(-25px);
+    animation-delay: calc(var(--i) * 0.15s);
+}
+
+@keyframes circle-rotate {
+    0% {
+        opacity: 0.3;
+        transform: translate(-50%, -50%) rotate(calc(var(--i) * 45deg)) translateY(-25px) scale(0.8);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) rotate(calc(var(--i) * 45deg)) translateY(-25px) scale(1);
+    }
+    100% {
+        opacity: 0.3;
+        transform: translate(-50%, -50%) rotate(calc(var(--i) * 45deg)) translateY(-25px) scale(0.8);
+    }
+}
+
+.histograms {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    border: 1px solid #029491;
+    border-radius: 8px;
+    margin: 0 auto; /* Центрируем */
+    width: 90vw; /* Ширина почти на всю страницу */
+    overflow: hidden; /* Скрываем лишнее */
+}
+
+.content-histograms {
+    display: flex;
+    gap: 5px;
+    overflow-x: auto; /* Горизонтальная прокрутка */
+    scroll-behavior: smooth; /* Плавная прокрутка */
+    white-space: nowrap; /* Запрет переноса строк */
+    max-width: 85vw; /* Чуть меньше ширины блока, чтобы учесть отступы */
+}
+
+/* Стили для заголовков гистограмм */
+.header-histograms {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 0px 20px;
+    background-color: #029491;
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.header-histograms p {
+    flex: 1;
+    text-align: center;
+    font-size: 24px;
+}
+
+/* Стили для контейнера карточек гистограмм *
+
+/* Стили для карточек гистограмм */
+.histogram-card {
+    flex: 0 0 auto; /* Фиксированная ширина, чтобы карточки не сжимались */
+    width: 200px; /* Ширина карточки */
+    margin-top: 25px;
+    border-right: 2px solid #ccc;
+    background-color: #ffffff;
+    text-align: center;
+
+}
+
+.histogram-card h3 {
+    font-size: 26px;
+    margin: 0px;
+}
+
+.histogram-card p {
+    font-size: 26px;
+    margin-top: 45px;
+    margin-bottom: 0px;
+}
+
+.scroll-button {
+    background-color: transparent; /* Прозрачный фон */
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px; /* Ширина кнопки */
+    height: 70px; /* Высота кнопки */
+}
+
+.scroll-button img {
+    width: 100%; /* Картинка занимает всю ширину кнопки */
+    height: 100%; /* Картинка занимает всю высоту кнопки */
+    object-fit: contain; /* Сохраняет пропорции картинки */
+}
+
+/* Позиционирование стрелочек */
+.scroll-button.left {
+    position: absolute;
+    left: -50px; /* Расположение слева от гистограмм */
+    margin-left: 50px;
+}
+
+.scroll-button.right {
+    position: absolute;
+    right: -50px; /* Расположение справа от гистограмм */
+    margin-right: 70px;
+}
+
 .list-of-documents {
     padding: 50px 0px 0px 50px
 }

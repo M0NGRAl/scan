@@ -31,6 +31,7 @@
     padding: 0px 0px 0px 30px;
 }
 
+
 .tariff.business .tariff-header p {
     color: white;
     margin: 0;
@@ -72,14 +73,3 @@
     width: 100%;
 }
 
-.in_personal_account {
-    margin-top: 40px;
-    margin-bottom: 15px;
-    padding: 15px 30px;
-    font-size: 18px;
-    color: #fff;
-    background-color: #5970ff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}

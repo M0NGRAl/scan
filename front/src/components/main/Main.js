@@ -7,6 +7,7 @@ import OurRates from "./main_screen/Our_rates.js";
 import Search_result from "../search_result/Search_result.js";
 
 const Main = ({onShowSearch}) => {
+
     return (
         <div className="main">
             <Saerch_date onShowSearch={onShowSearch} />

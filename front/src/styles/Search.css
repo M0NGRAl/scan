@@ -14,9 +14,14 @@
     flex-direction: column;
 }
 
-.search-header .text-content h2{
+.search-header .text-content h1 {
+    padding: 0px;
     margin: 0px;
     text-transform: uppercase;
+}
+
+.search-header .text-content p {
+    font-size: 36px;
 }
 
 .images-section {
@@ -24,7 +29,7 @@
     flex-direction: row;
     gap: 300px;
     padding-right: 100px;
-    padding-top: 50px;
+    padding-top: 70px;
 }
 
 .list_image {
@@ -33,6 +38,195 @@
 }
 
 .folders_image {
-    width: 130px;
-    height: 80px
+    width: 170px;
+    height: 80px;
 }
+
+.search-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 100px 50px 0px 50px;
+    width: 100%;
+}
+
+.placeholder {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+}
+
+.field-input {
+    display: flex;
+    flex-direction: row;
+    gap: 20px; /* Добавляем отступ между блоками */
+    width: 100%; /* Занимает всю доступную ширину */
+}
+
+/* Основной контейнер для всех инпутов */
+.inputs {
+    background-color: #fff;
+    width: 50%; /* Увеличиваем ширину */
+    max-width: 600px; /* Увеличиваем максимальную ширину */
+}
+
+/* Стили для каждого блока с инпутом */
+.inn-input,
+.tonality-input,
+.quantity-input,
+.dates-input {
+    margin-bottom: 50px;
+    width: 80%; /* Занимает всю ширину контейнера */
+}
+
+/* Стили для лейблов */
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.date-range {
+    display: flex;
+    flex-direction: row;
+}
+
+.date-input-group {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 5px; /* Отступ между текстом и полем ввода */
+}
+
+.date-input-group p {
+    margin: 0; /* Убираем отступы у текста */
+    font-size: 16px; /* Размер текста */
+    color: #333; /* Цвет текста */
+}
+
+.date-input-group input {
+    width: 90%; /* Ширина поля ввода */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Стили для текстовых инпутов и селектов */
+input[type="text"],
+input[type="number"],
+input[type="date"],
+select {
+    width: 80%;
+    padding: 15px;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+    box-sizing: border-box; /* Учитываем padding в ширине */
+}
+
+/* Стили для чекбоксов */
+.selection-fields {
+    display: flex;
+    flex-direction: column;
+    min-width: 500px;
+}
+
+.selection-fields label {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.selection-fields input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 25px;
+    height: 25px;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+    margin-right: 8px;
+}
+
+/* Стили для галочки */
+.selection-fields input[type="checkbox"]:checked::before {
+    content: "✔";
+    display: block;
+    text-align: center;
+    color: green;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+/* Стили для кнопки */
+.button-section {
+    bottom: 0;
+    right: 0;
+    padding: 120px 0px 0px 0px;
+}
+
+.button-section p {
+    color: grey;
+    font-size: 16px;
+}
+
+.button-section button {
+    padding: 18px 160px;
+    background-color: #5970ff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-section button:hover {
+    background-color: #0056b3;
+}
+
+.button-section button:disabled {
+    background-color: #ccc; /* Серый цвет для неактивной кнопки */
+    cursor: not-allowed; /* Курсор "недоступно" */
+}
+
+.error-input {
+    border: 2px solid red !important;/* Красная граница */
+    color: red; /* Красный текст */
+}
+
+.error {
+    color: red;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+
+.main-image-search {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 100px;
+    padding-right: 100px;
+
+}
+
+.main-image-search .main-image{
+    width: 800px; /* Увеличиваем ширину изображения */
+    max-width: 100%; /* Чтобы изображение не выходило за пределы контейнера */
+}
+
+.required-star {
+    color: #333; /* Стандартный цвет звёздочки */
+    margin-left: 4px; /* Отступ от текста */
+}
+
+.red-star {
+    color: red !important; /* Красный цвет звёздочки при ошибке */
+}
+

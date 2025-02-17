@@ -10,6 +10,10 @@
 
 }
 
+.tariff.beginner.no-border {
+    border: none;
+}
+
 .tariff.beginner:hover {
     transform: translateY(-5px);
 }
@@ -79,17 +83,6 @@
     padding: 8px 0; /* Увеличиваем отступы */
 }
 
-.tariff.beginner button {
-    margin-top: 20px; /* Увеличиваем отступы */
-    margin-bottom: 15px; /* Увеличиваем отступы */
-    padding: 15px 30px; /* Увеличиваем padding */
-    font-size: 18px; /* Увеличиваем размер шрифта */
-    color: #fff;
-    background-color: #666;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
 
 /* Контейнер для карточек */
 .tariff-container {
@@ -109,4 +102,10 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
+}
+
+.tariff .beginner button {
+    margin-top: 20px;
+    background-color: #5970ff;
+
 }

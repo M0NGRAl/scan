@@ -25,7 +25,7 @@ const Business = () => {
                         <li>Приоритетная поддержка</li>
                     </ul>
                 </div>
-                <button className="in_personal_account">Подробнее</button>
+                <button className='more-details'>Подробнее</button>
             </div>
         </div>
     );

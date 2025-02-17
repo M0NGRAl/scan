@@ -47,6 +47,16 @@
     transform: scale(0.98);
 }
 
+.search-button:hover:not(:disabled) {
+    background-color: #0056b3; /* Цвет фона при наведении (только для активной кнопки) */
+}
+
+.search-button:disabled {
+    background-color: #cccccc; /* Серый цвет фона для заблокированной кнопки */
+    color: #666666; /* Серый цвет текста */
+    cursor: not-allowed; /* Курсор "недоступно" */
+}
+
 .search-image{
     width: 900px;
     height: auto;

@@ -1,10 +1,12 @@
-import React from "react";
+import React, {useContext} from "react";
 import image from '../../../images/search_date.png'
 import '../../../styles/Search_date.css'
 import { useNavigate } from "react-router-dom";
+import {AuthContext} from "../../context/AuthContext.js";
 
 const SearchDate = ({onShowSearch}) => {
     const navigate = useNavigate();
+    const {isAuthenticated: isAuthenticated} = useContext(AuthContext);
     return (
         <div className="search_date-container">
             <div className="information">
@@ -20,7 +22,13 @@ const SearchDate = ({onShowSearch}) => {
                 <p>
                     Комплексный анализ публикаций, получение данных в формате PDF на электронную почту.
                 </p>
-                <button className="search-button" onClick={() => navigate('/search')}>Запросить данные</button>
+                {isAuthenticated ? (
+                    <button className="search-button" onClick={() => navigate('/search')}
+                    >Запросить данные</button>
+                ) : (
+                    <></>
+                )}
+
             </div>
             <div className="image-section">
                 <img src={image} alt="img" className="search-image" />

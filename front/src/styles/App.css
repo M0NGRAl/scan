@@ -2,3 +2,15 @@
     margin: 0px;
     padding: 0px;
 }
+
+@font-face {
+    font-family: 'Ferry';
+    src: url('../fonts/ferry_black.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+h1 {
+    font-family: 'Ferry', "Inter";
+}

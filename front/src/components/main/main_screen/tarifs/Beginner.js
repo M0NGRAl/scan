@@ -1,10 +1,12 @@
-import React from "react";
+import React, {useContext} from "react";
 import "../../../../styles/Beginner.css";
 import beginnerImage from "../../../../images/our_rates/beginner.png";
+import {AuthContext} from "../../../context/AuthContext.js";
 
 const Beginner = () => {
+    const {isAuthenticated} = useContext(AuthContext);
     return (
-        <div className="tariff beginner">
+        <div className={`tariff beginner ${!isAuthenticated ? "no-border" : ""}`}>
             <div className="tariff-header">
                 <div className="header-info">
                     <h2>Beginner</h2>
@@ -26,7 +28,12 @@ const Beginner = () => {
                         <li>Поддержка 24/7</li>
                     </ul>
                 </div>
-                <button className="in_personal_account">Перейти в личный кабинет</button>
+                {isAuthenticated ? (
+                    <button className="in_personal_account">Перейти в личный кабинет</button>
+                    )
+                    :
+                    (<button className="more-details">Подробнее</button>)
+                }
             </div>
         </div>
     );

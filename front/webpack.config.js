@@ -13,6 +13,7 @@ export default {
         path: path.resolve(__dirname, "dist"), // Путь к выходной директории
         filename: "main.[contenthash].js", // Уникальное имя для main.js
         clean: true, // Очищает dist перед каждой сборкой
+        publicPath: "/", // Убедитесь, что publicPath указан
     },
     module: {
         rules: [
@@ -42,4 +43,11 @@ export default {
             template: path.resolve(__dirname, "src", "index.html"), // Шаблон HTML
         }),
     ],
+    devServer: {
+        static: {
+            directory: path.join(__dirname, "dist"), // Указываем директорию для статических файлов
+        },
+        historyApiFallback: true, // Включаем поддержку клиентской маршрутизации
+        open: true, // Автоматически открывать браузер
+    },
 };

@@ -14,6 +14,7 @@ const Authorization = () => {
     const [loginError, setLoginError] = useState(false);
     const [passwordError, setPasswordError] = useState(false);
     const [isLoading, setIsLoading] = useState(false);
+    const [authorizationData, setAuthorizationData] = useState(true);
     const navigate = useNavigate();
     const {login: authLogin} = useContext(AuthContext);
 
@@ -67,17 +68,17 @@ const Authorization = () => {
                     return response.json();
                 })
                 .then((data) => {
-                    console.log('Ответ от сервера:', data);
-                    if (data.token) {
-                        localStorage.setItem('token', data.token);
+                    if (data && data.accessToken && data.expire) {
+                        setAuthorizationData(true);
+                        authLogin(data.accessToken, data.expire)
+                        navigate("/");
+                    } else {
+                        throw new Error('Неверные данные в ответе');
                     }
-                    navigate("/");
-                    authLogin()
                 })
                 .catch((error) => {
-                    console.error('Ошибка:', error);
-                    setPasswordError(true);
-                    setLoginError(true);
+                    console.error('Ошибка при авторизации:', error);
+                    setAuthorizationData(false);
                 })
                 .finally(() => {
                     setIsLoading(false);
@@ -93,13 +94,13 @@ const Authorization = () => {
             <div className="content">
                 <div className="content-container">
                     <div className="text-content">
-                        <h2>
+                        <h1>
                             Для оформления подписки
                             <br />
                             на тариф, необходимо
                             <br />
                             авторизоваться.
-                        </h2>
+                        </h1>
                     </div>
                     <div className="image-section">
                         <img src={Authorization_image} alt="img" className="authorization_image" />
@@ -121,16 +122,21 @@ const Authorization = () => {
                         value={login}
                         onChange={handleLoginChange}
                         autoComplete="on"
+                        className={loginError ? "error-input" : ""}
+                        className ={!authorizationData ? "error-input" : ""}
                     />
-                    {loginError && <p style={{ color: 'red', fontSize: '14px' }}>Введите корректные данные</p>}
+                    {loginError && <p style={{ color: 'red', fontSize: '16  px' }}>Введите корректные данные</p>}
                     <p>Пароль:</p>
                     <input
                         type="password"
                         value={password}
                         onChange={handlePasswordChange}
                         autoComplete="on"
+                        className={passwordError ? "error-input" : ""}
+                        className ={!authorizationData ? "error-input" : ""}
                     />
-                    {passwordError && <p style={{ color: 'red', fontSize: '14px' }}>Неверный пароль</p>}
+                    {passwordError && <p style={{ color: 'red', fontSize: '16px' }}>Неправильный пароль</p>}
+                    {!authorizationData && <p style={{ color: 'red', fontSize: '16px' }}>Неверный логин или пароль</p>}
                     <button onClick={handleSubmit} disabled={!isFormValid || isLoading}>
                         {isLoading ? 'Загрузка...' : 'Войти'}
                     </button>

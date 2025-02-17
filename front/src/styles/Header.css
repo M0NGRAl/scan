@@ -2,21 +2,22 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px;
     background-color: white;
+    position: relative;
 }
 
-
-.logo-image {
+.logo-section {
     padding: 0px 0px 0px 50px;
-    width: 180px;
-    height: auto;
+    flex: 0 0 auto; /* Логотип не растягивается */
 }
-
 
 .nav-links {
     display: flex;
     gap: 60px;
+    position: absolute; /* Абсолютное позиционирование */
+    left: 50%; /* Сдвигаем навигацию на 50% вправо */
+    transform: translateX(-50%); /* Центрируем навигацию */
+    z-index: 1; /* Убедимся, что навигация выше других элементов */
 }
 
 .nav-link {
@@ -30,46 +31,152 @@
     transform: scale(1.1);
 }
 
-
 .auth-buttons {
     padding: 0px 50px 0px 0px;
     display: flex;
-    align-items: center; /* Выравнивание по центру */
-    gap: 15px; /* Пространство между элементами */
+    align-items: center;
+    gap: 15px;
+    flex: 0 0 auto; /* Кнопки не растягиваются */
+}
+
+.company-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    padding-right: 60px;
+     /* Отступ между информацией и кнопкой "Выйти" */
+}
+
+.company-info p {
+    font-size: 22px;
+    margin: 0px;
+}
+
+.company-number1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.company-number2 {
+    font-size: 28px;
+    font-weight: bold;
+    color: #8ac540;
+    margin-left: 5px;
+}
+
+.circle-spinner {
+    position: relative;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle-spinner .dot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: gray;
+    border-radius: 50%;
+    animation: circle-rotate 1.2s linear infinite;
+    transform-origin: 50% 50%;
+}
+
+/* Расположение точек по кругу */
+.circle-spinner .dot {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(calc(var(--i) * 45deg)) translateY(-25px);
+    animation-delay: calc(var(--i) * 0.15s);
+}
+
+@keyframes circle-rotate {
+    0% {
+        opacity: 0.3;
+        transform: translate(-50%, -50%) rotate(calc(var(--i) * 45deg)) translateY(-25px) scale(0.8);
+    }
+    50% {
+        opacity: 1;
+        transform: translate(-50%, -50%) rotate(calc(var(--i) * 45deg)) translateY(-25px) scale(1);
+    }
+    100% {
+        opacity: 0.3;
+        transform: translate(-50%, -50%) rotate(calc(var(--i) * 45deg)) translateY(-25px) scale(0.8);
+    }
+}
+
+.header-login-container {
+    display: flex; /* Используем Flexbox */
+    align-items: center; /* Выравниваем элементы по центру вертикально */
+    gap: 10px; /* Расстояние между элементами */
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column; /* Элементы внутри user-info будут друг под другом */
+    align-items: flex-end; /* Выравниваем по центру горизонтально */
+    justify-content: flex-end;
+}
+
+.user-info label {
+    font-size: 26px;
+}
+
+.profile-image {
+    width: 70px; /* Уменьшаем размер аватара */
+    height: 70px; /* Уменьшаем размер аватара */
+    border-radius: 50%; /* Делаем аватар круглым */
+    object-fit: cover; /* Чтобы изображение не искажалось */
+}
+
+
+.exit-button {
+    background: none;
+    border: none;
+    color: gray;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    padding: 5px 10px;
+}
+
+.exit-button:hover {
+    transform: scale(1.1);
+    color: darkgray;
+}
+
+.auth-button {
+    background-color: rgb(103, 191, 189);
+    color: black;
+    border: none;
+    padding: 8px 16px;
+    font-size: 23px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.auth-button:hover {
+    transform: scale(1.1);
+    background-color: rgb(83, 161, 159);
 }
 
 .auth-link {
     text-decoration: none;
     color: gray;
     font-size: 22px;
-    transition: transform 0.3s ease; /* Анимация для плавного увеличения */
+    transition: transform 0.3s ease;
 }
 
 .auth-link:hover {
-    transform: scale(1.1); /* Увеличение размера при наведении */
+    transform: scale(1.1);
 }
 
-
-/* Стили для разделительной линии */
 .separator-line {
     width: 3px;
     height: 55px;
     background-color: rgb(103, 191, 189);
-}
-
-/* Стили для кнопки "Войти" */
-.auth-button {
-    background-color: rgb(103, 191, 189); /* Цвет кнопки */
-    color: black; /* Цвет текста */
-    border: none; /* Без границы */
-    padding: 8px 16px; /* Внутренние отступы */
-    font-size: 23px; /* Размер шрифта */
-    cursor: pointer; /* Изменение курсора при наведении */
-    border-radius: 20px; /* Закругление углов */
-    transition: transform 0.3s ease, background-color 0.3s ease; /* Анимация для плавного увеличения и изменения цвета */
-}
-
-.auth-button:hover {
-    transform: scale(1.1); /* Увеличение размера при наведении */
-    background-color: rgb(83, 161, 159); /* Изменение цвета при наведении */
 }
