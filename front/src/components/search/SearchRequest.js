@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from "react";
+import React, {  useState } from "react";
 import { validateInn } from './validateInn.js';
 import {useNavigate} from 'react-router-dom';
 import { useHistograms} from "../context/HistogramsContext.js";
@@ -129,6 +129,28 @@ const SearchRequest = () => {
         }
 
         try {
+            const response = await fetch('https://gateway.scan-interfax.ru/api/v1/objectsearch', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${localStorage.getItem('token')}`,
+                },
+                body: JSON.stringify(requestBody)
+            });
+
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            const data = await response.json();
+            setDocumentsData(data);
+        } catch (error) {
+            console.error(error);
+        } finally {
+            setIsLoadingDocuments(false);
+        }
+
+        try {
             const response = await fetch('https://gateway.scan-interfax.ru/api/v1/objectsearch/histograms', {
                 method: 'POST',
                 headers: {
@@ -150,27 +172,6 @@ const SearchRequest = () => {
             setIsLoadingHistograms(false);
         }
 
-        try {
-            const response = await fetch('https://gateway.scan-interfax.ru/api/v1/objectsearch', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': `Bearer ${localStorage.getItem('token')}`,
-                },
-                body: JSON.stringify(requestBody)
-            });
-
-            if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-
-            const data = await response.json();
-            setDocumentsData(data);
-        } catch (error) {
-            console.error(error);
-        } finally {
-            setIsLoadingDocuments(false);
-        }
     };
 
 
