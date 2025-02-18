@@ -47,7 +47,6 @@
     flex-direction: row;
     justify-content: space-between;
     padding: 100px 50px 0px 50px;
-    width: 100%;
 }
 
 .placeholder {
@@ -212,12 +211,12 @@ select {
     display: flex;
     justify-content: flex-end;
     padding-bottom: 100px;
-    padding-right: 100px;
+
 
 }
 
 .main-image-search .main-image{
-    width: 800px; /* Увеличиваем ширину изображения */
+    /* Увеличиваем ширину изображения */
     max-width: 100%; /* Чтобы изображение не выходило за пределы контейнера */
 }
 

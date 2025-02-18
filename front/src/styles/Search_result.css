@@ -104,7 +104,7 @@
     display: flex;
     flex-direction: row;
     gap: 20px;
-    border: 1px solid #029491;
+    border: 3px solid #029491;
     border-radius: 8px;
     margin: 0 auto; /* Центрируем */
     width: 90vw; /* Ширина почти на всю страницу */
@@ -132,9 +132,11 @@
 }
 
 .header-histograms p {
+    padding-top: 20px;
     flex: 1;
     text-align: center;
     font-size: 24px;
+    color: white;
 }
 
 /* Стили для контейнера карточек гистограмм *
@@ -143,7 +145,7 @@
 .histogram-card {
     flex: 0 0 auto; /* Фиксированная ширина, чтобы карточки не сжимались */
     width: 200px; /* Ширина карточки */
-    margin-top: 25px;
+    margin-top: 20px;
     border-right: 2px solid #ccc;
     background-color: #ffffff;
     text-align: center;
@@ -157,7 +159,7 @@
 
 .histogram-card p {
     font-size: 26px;
-    margin-top: 45px;
+    margin-top: 40px;
     margin-bottom: 0px;
 }
 
@@ -193,9 +195,176 @@
 }
 
 .list-of-documents {
-    padding: 50px 0px 0px 50px
+    padding: 50px 50px 0px 50px
 }
 
 .list-of-documents h2{
     font-size: 60px;
+}
+
+.publications {
+    display: flex;
+    flex-wrap: wrap; /* Разрешаем перенос карточек на новую строку */
+    gap: 40px; /* Расстояние между карточками */
+}
+
+
+
+
+.publication-card {
+    flex: 1 1 calc(50% - 40px); /* 2 карточки в строке с учетом gap */
+    box-sizing: border-box;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px 0;
+}
+
+
+.card-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 12px;
+    padding-bottom: 20px;
+    gap: 50px;
+}
+
+.card-header p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.card-header a {
+    color: grey;
+    font-weight: bold;
+}
+
+.card-header a:hover {
+    text-decoration: underline;
+}
+
+.card-content {
+    margin-bottom: 16px;
+    max-height: 1000px; /* Ограничиваем высоту контента */
+    overflow: hidden; /* Скрываем лишний контент */
+    position: relative; /* Для псевдоэлемента */
+
+}
+
+.card-content::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 10px; /* Высота градиента */
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1)); /* Градиент для плавного скрытия текста */
+}
+
+p, span, li {
+    font-size: 18px; /* Размер шрифта для обычного текста */
+    color: #555; /* Цвет текста */
+    line-height: 1.6; /* Межстрочный интервал */
+    margin: 0 0 6px 0; /* Отступ снизу */
+}
+
+/* Заголовки */
+
+
+.card-content h2 {
+    font-size: 30px; /* Размер шрифта для h2 */
+    margin: 0 0 10px 0; /* Отступ снизу */
+}
+
+.card-content h3 {
+    font-size: 30px; /* Размер шрифта для h3 */
+    margin: 0 0 6px 0; /* Отступ снизу */
+}
+
+/* Жирный текст */
+.card-content b, strong {
+    font-weight: bold; /* Жирный текст */
+}
+
+/* Списки */
+.card-content ul {
+    list-style-type: disc; /* Маркеры списка */
+    padding-left: 20px; /* Отступ слева */
+    margin: 0 0 12px 0; /* Отступ снизу */
+}
+
+.card-content li {
+    margin-bottom: 8px; /* Отступ между элементами списка */
+}
+
+/* Ссылки */
+.card-content a {
+    color: #007bff; /* Цвет ссылок */
+    text-decoration: none; /* Убираем подчеркивание */
+    font-weight: bold; /* Жирный текст */
+}
+
+.card-content a:hover {
+    text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+.card-content .title {
+    margin: 0 0 12px 0;
+    font-size: 30px;
+    padding-bottom: 20px;
+}
+
+.card-content div {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.read-more-button button {
+    background-color: #7ce3e1;
+    border: none;
+    border-radius: 4px;
+    padding: 16px 32px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.read-more-button button:hover {
+    background-color: #0056b3;
+}
+
+.card-footer p {
+    margin: 0;
+    font-size: 16px;
+    color: #666;
+}
+
+.show-more-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.show-more-button {
+    background-color: #5970ff;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    padding: 18px 60px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.show-more-button:hover {
+    background-color: #0056b3;
 }

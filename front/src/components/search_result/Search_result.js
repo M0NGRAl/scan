@@ -10,7 +10,7 @@ const Search_result = () => {
     const [publications, setPublications] = useState([]);
     const [isLoadingPublications, setIsLoadingPublications] = useState(false);
     const scrollContainerRef = useRef(null);
-    const [quantityPublications, setQuantityPublications] = useState(5);
+    const [quantityPublications, setQuantityPublications] = useState(6);
 
     // Загрузка данных о публикациях
     useEffect(() => {
@@ -19,7 +19,7 @@ const Search_result = () => {
 
             const fetchData = async () => {
                 setIsLoadingPublications(true);
-                const data = await fetchDocumentsDetails(ids);
+                const data = await fetchDocumentsDetails(ids, publications.length);
                 if (data) {
                     setPublications(data);
                 }
@@ -30,8 +30,8 @@ const Search_result = () => {
         }
     }, [documentsData, quantityPublications]); // Добавлена зависимость от quantityPublications
 
-    const fetchDocumentsDetails = async (ids) => {
-        const idsToFetch = ids.slice(0, quantityPublications);
+    const fetchDocumentsDetails = async (ids, startIndex) => {
+        const idsToFetch = ids.slice(startIndex, startIndex + 6)
         const fetchedPublications = [];
         for (const id of idsToFetch) {
             try {
@@ -119,11 +119,8 @@ const Search_result = () => {
 
     // Рендер публикаций
     const renderPublications = () => {
-        if (isLoadingPublications) {
-            return <p>Загрузка публикаций...</p>;
-        }
 
-        if (!publications || publications.length === 0) {
+        if (isLoadingPublications && !publications || publications.length === 0) {
             return <p>Публикации не найдены</p>;
         }
 
@@ -145,18 +142,18 @@ const Search_result = () => {
                     </div>
                     <div className="attributes"></div>
                     <div className="card-content">
-                        <h3>{extractHtmlFromXml(pub.title?.markup) || "Без названия"}</h3>
+                        <h3 className='title'>{extractHtmlFromXml(pub.title?.markup) || "Без названия"}</h3>
                         <div
                             dangerouslySetInnerHTML={{
-                                __html: truncateText(extractTextFromXml(pub.content?.markup), 3000),
+                                __html: truncateText(extractTextFromXml(pub.content?.markup), 2000),
                             }}
                         />
                     </div>
                     <div className="card-footer">
                         <div className="read-more-button">
-                            <button>Читать далее</button>
+                            <button onClick={() => window.open(pub.url, "_blank")}>Читать в источнике</button>
                         </div>
-                        <p>{pub.attributes.wordCount}</p>
+                        <p>{pub.attributes.wordCount} слова</p>
                     </div>
                 </div>
             );
@@ -197,13 +194,11 @@ const Search_result = () => {
     };
 
     const handleShowMore = () => {
-        console.log("Текущее количество отображаемых публикаций:", quantityPublications); // Логируем текущее значение
-        setQuantityPublications((prev) => prev + 5); // Увеличиваем количество отображаемых публикаций на 5
+        setQuantityPublications((prev) => prev + 6); // Увеличиваем количество отображаемых публикаций на 5
     };
 
     // Проверка, нужно ли показывать кнопку "Показать больше"
     const isShowMoreVisible = documentsData?.items?.length > quantityPublications;
-    console.log("Кнопка 'Показать больше' видима:", isShowMoreVisible);
 
     return (
         <div className="search-result">
@@ -247,15 +242,16 @@ const Search_result = () => {
             </div>
             <div className="list-of-documents">
                 <h2>Список документов</h2>
-                <div className='show-more-section'>
-                    {isShowMoreVisible && (
-                        <button className='show-more-button' onClick={handleShowMore}>Показать больше</button>
-                    )}
+                <div className='documents-list-section'>
+                    <div className='publications'>
+                        {renderPublications()}
+                    </div>
+                    <div className='show-more-section'>
+                        {isShowMoreVisible && (
+                            <button className='show-more-button' onClick={handleShowMore}>Показать больше</button>
+                        )}
+                    </div>
                 </div>
-                <div className='publications'>
-                    {renderPublications()}
-                </div>
-
             </div>
         </div>
     );
