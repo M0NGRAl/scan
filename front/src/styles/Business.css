@@ -1,75 +1,31 @@
-.tariff.business {
-    display: flex;
-    flex-direction: column;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    width: 30%;
-    height: 700px;
-}
-
-.tariff.business:hover {
-    transform: translateY(-5px);
+.tariff.business .tariff-info .tariff-include {
+    padding-top: 30px !important;
 }
 
 .tariff.business .tariff-header{
-    width: 100%;
-    height: 20%;
-    display: flex;
-    align-content: space-between;
-    align-items: center;
+
     background-color: black;
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px; ;
+
 }
 
 .tariff.business h2{
     color: white;
-    font-size: 36px;
-    font-weight: bold;
-    margin: 15px 0;
-    padding: 0px 0px 0px 30px;
+
 }
 
 
 .tariff.business .tariff-header p {
     color: white;
-    margin: 0;
-    font-size: 20px;
-    padding: 0px 0px 0px 30px;
-}
-
-.tariff.business .tariff-info {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-content: center;
 
 }
 
-.tariff.business .price-info{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-start;
-    gap: 20px;
-    padding: 0px 0px 0px 30px;
-}
 
-.tariff.business .price-info .price {
-    font-size: 34px;
-    font-weight: bold;
-}
 
-.tariff.business .price-info .old-price {
-    font-size: 32px;
-    color: gray;
-    text-decoration: line-through;
-    margin: 34px 0px;
-}
 
-.tariff-container {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-}
+
+
+
+
+
+
 

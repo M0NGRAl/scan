@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, {useContext, useEffect} from "react";
 import image from '../../../images/search_date.png'
 import '../../../styles/Search_date.css'
 import { useNavigate } from "react-router-dom";
@@ -7,6 +7,22 @@ import {AuthContext} from "../../context/AuthContext.js";
 const SearchDate = ({onShowSearch}) => {
     const navigate = useNavigate();
     const {isAuthenticated: isAuthenticated} = useContext(AuthContext);
+
+    useEffect(() => {
+        const handleResize = () => {
+            console.log(window.innerWidth);
+
+
+        };
+
+        handleResize(); // Вызываем сразу при загрузке
+        window.addEventListener('resize', handleResize); // Следим за изменением размера окна
+
+        return () => {
+            window.removeEventListener('resize', handleResize); // Очищаем слушатель
+        };
+    }, []);
+
     return (
         <div className="search_date-container">
             <div className="information">
@@ -20,7 +36,9 @@ const SearchDate = ({onShowSearch}) => {
                     по его ИНН
                 </h1>
                 <p>
-                    Комплексный анализ публикаций, получение данных в формате PDF на электронную почту.
+                    Комплексный анализ публикаций, получение данных
+                    <br/>
+                    в формате PDF на электронную почту.
                 </p>
                 {isAuthenticated ? (
                     <button className="search-button" onClick={() => navigate('/search')}
@@ -30,7 +48,7 @@ const SearchDate = ({onShowSearch}) => {
                 )}
 
             </div>
-            <div className="image-section">
+            <div className="search-date-image-section">
                 <img src={image} alt="img" className="search-image" />
             </div>
         </div>
