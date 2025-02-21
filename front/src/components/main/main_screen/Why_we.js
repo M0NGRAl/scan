@@ -35,7 +35,7 @@ const WhyWe = () => {
     useEffect(() => {
         const handleResize = () => {
 
-            if (window.innerWidth < 986) {
+            if (window.innerWidth < 786) {
                 setSlidesToShow(1); // 1 слайд на маленьких экранах
             } else if (window.innerWidth < 1200) {
                 setSlidesToShow(2); // 2 слайда на средних экранах
@@ -97,7 +97,7 @@ const WhyWe = () => {
                                 flex: `0 0 ${100 / slidesToShow}%`, // Ширина слайда
                             }}
                         >
-                            <img src={item.image} alt={item.description} />
+                            <img className='carousel-image' src={item.image} alt={item.description} />
                             <p>{item.description}</p>
                         </div>
                     ))}

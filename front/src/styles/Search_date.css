@@ -131,6 +131,12 @@
         font-size: 16px;
     }
 
+    .search-image {
+        width: 350px;
+        height: auto;
+        padding: 20px;
+    }
+
 
 
 }

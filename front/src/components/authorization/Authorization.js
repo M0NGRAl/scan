@@ -1,4 +1,4 @@
-import React, {useContext, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import { useNavigate } from "react-router-dom";
 import Authorization_image from '../../images/authorization/authorization.png';
 import '../../styles/Authorization.css';
@@ -17,10 +17,23 @@ const Authorization = () => {
     const [authorizationData, setAuthorizationData] = useState(true);
     const navigate = useNavigate();
     const {login: authLogin} = useContext(AuthContext);
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
     const phoneRegex = /^[\+]?[0-9]{10,15}$/; // Номер телефона
     const loginRegex = /^[a-zA-Z0-9_]{3,20}$/; // Логин
 
+    useEffect(() => {
+        const handleResize = () => {
+            setWindowWidth(window.innerWidth);
+        };
+
+        handleResize(); // Вызываем сразу при загрузке
+        window.addEventListener('resize', handleResize); // Следим за изменением размера окна
+
+        return () => {
+            window.removeEventListener('resize', handleResize); // Очищаем слушатель
+        };
+    }, []);
     const handleLoginChange = (e) => {
         const value = e.target.value;
         setLogin(value);
@@ -102,9 +115,11 @@ const Authorization = () => {
                             авторизоваться.
                         </h1>
                     </div>
-                    <div className="image-section">
-                        <img src={Authorization_image} alt="img" className="authorization_image" />
-                    </div>
+                    {windowWidth > 880 && (
+                        <div className="image-section">
+                            <img src={Authorization_image} alt="img" className="authorization_image" />
+                        </div>
+                    )}
                 </div>
                 <div className="image-lock">
                     <img src={Lock_image} alt="img" className="lock-image" />
@@ -122,28 +137,34 @@ const Authorization = () => {
                         value={login}
                         onChange={handleLoginChange}
                         autoComplete="on"
-                        className={loginError ? "error-input" : ""}
-                        className ={!authorizationData ? "error-input" : ""}
+                        className={[
+                            loginError ? "error-input" : "",
+                            !authorizationData ? "error-input" : ""
+                        ].join(" ").trim()}
                     />
-                    {loginError && <p style={{ color: 'red', fontSize: '16  px' }}>Введите корректные данные</p>}
+                    {loginError && <p style={{color: 'red', fontSize: '16  px'}}>Введите корректные данные</p>}
                     <p>Пароль:</p>
                     <input
                         type="password"
                         value={password}
                         onChange={handlePasswordChange}
                         autoComplete="on"
-                        className={passwordError ? "error-input" : ""}
-                        className ={!authorizationData ? "error-input" : ""}
+                        className={[
+                            passwordError ? "error-input" : "",
+                            !authorizationData ? "error-input" : ""
+                        ].join(" ").trim()}
+
                     />
-                    {passwordError && <p style={{ color: 'red', fontSize: '16px' }}>Неправильный пароль</p>}
-                    {!authorizationData && <p style={{ color: 'red', fontSize: '16px' }}>Неверный логин или пароль</p>}
+                    {passwordError && <p style={{color: 'red', fontSize: '16px'}}>Неправильный пароль</p>}
+                    {!authorizationData && <p style={{color: 'red', fontSize: '16px'}}>Неверный логин или пароль</p>}
                     <button onClick={handleSubmit} disabled={!isFormValid || isLoading}>
                         {isLoading ? 'Загрузка...' : 'Войти'}
                     </button>
+                    <div className="links">
+                        <a href="#">Восстановить пароль</a>
+                    </div>
                 </div>
-                <div className="links">
-                    <a href="#">Восстановить пароль</a>
-                </div>
+
                 <div className="social-login">
                     <p>Войти через:</p>
                     <div className="social-buttons">
@@ -159,6 +180,11 @@ const Authorization = () => {
                     </div>
                 </div>
             </div>
+            {windowWidth < 880 && (
+                <div className="image-section">
+                    <img src={Authorization_image} alt="img" className="authorization_image" />
+                </div>
+            )}
         </div>
     );
 };

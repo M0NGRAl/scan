@@ -9,6 +9,13 @@
 .our-rates h1 {
     align-items: flex-start;
     font-size: 60px;
+    text-align: left;
+    align-self: flex-start;
+    padding-left: 30px;
+}
+
+.rates-container {
+    width: 100%;
 }
 
 .tariff {
@@ -18,7 +25,7 @@
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease;
     width: 30%;
-    height: 700px;
+    height: 600px;
 }
 
 .tariff-container {
@@ -46,13 +53,13 @@
     font-size: 36px; /* Увеличиваем размер шрифта */
     font-weight: bold;
     margin: 15px 0; /* Увеличиваем отступы */
-    padding: 0px 0px 0px 30px;
+    padding: 0px 0px 0px 20px;
 }
 
 .tariff .tariff-header p {
     margin: 0;
-    font-size: 20px;
-    padding: 0px 0px 0px 30px;
+    font-size: 18px;
+    padding: 0px 0px 0px 20px;
 }
 
 .price-info .old-price {
@@ -72,7 +79,7 @@
     flex-direction: row;
     justify-content: flex-start;
     gap: 20px;
-    padding: 0px 0px 0px 30px;
+    padding: 0px 0px 0px 20px;
 
 }
 
@@ -91,9 +98,9 @@
 }
 
 .installment{
-    font-size: 20px;
+    font-size: 18px;
     margin: 0px;
-    padding: 0px 0px 0px 30px;
+    padding: 0px 0px 0px 20px;
 }
 
 
@@ -101,7 +108,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    padding: 0px 0px 0px 30px;
+    padding: 0px 0px 0px 20px;
 }
 
 .tariff-include p{
@@ -113,6 +120,7 @@
 .tariff-features{
     list-style: none;
     padding: 0px;
+    margin: 0px 0px 0px 0px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -154,6 +162,186 @@
     justify-content: flex-start;
     align-content: center;
 
+}
+
+@media (max-width: 1537px) {
+    .installment{
+        font-size: 16px;
+        margin: 0px;
+        padding: 0px 0px 0px 20px;
+    }
+
+    .tariff h2 {
+        font-size: 30px;
+    }
+
+    .tariff .tariff-header p {
+        margin: 0;
+        font-size: 16px;
+        padding: 0px 0px 0px 20px;
+    }
+}
+
+@media (max-width: 1395px) {
+    .tariff {
+        height: 550px;
+    }
+
+
+    .our-rates h1 {
+        font-size: 50px; /* Уменьшаем размер заголовка */
+    }
+    .tariff-include p{
+        font-size: 24px;
+        margin: 0px;
+        padding: 50px 0px 0px 0px;
+    }
+
+    .tariff-features{
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 20px;
+    }
+
+    .tariff-features li {
+        font-size: 16px;
+        padding: 0px 0px 0px 20px;
+    }
+
+    .tariff h2 {
+        font-size: 26px;
+    }
+
+    .tariff .tariff-header p {
+        margin: 0;
+        font-size: 14px;
+        padding: 0px 0px 0px 20px;
+    }
+
+    .price-info .old-price {
+        font-size: 26px;
+        color: gray;
+        text-decoration: line-through;
+        margin: 34px 0px;
+    }
+
+    .price-info .price {
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+}
+
+/* Адаптация для экранов меньше 980px */
+@media (max-width: 1200px) {
+    .rates-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Центрируем тарифы */
+        gap: 30px; /* Добавляем отступ между тарифами */
+        width: 90%; /* Уменьшаем ширину контейнера */
+        margin: 0 auto; /* Центрируем контейнер */
+    }
+
+    .tariff {
+        width: 100%; /* Тарифы занимают всю ширину */
+        height: auto; /* Убираем фиксированную высоту */
+        max-width: 600px; /* Ограничиваем максимальную ширину */
+        margin-bottom: 20px; /* Добавляем отступ снизу */
+    }
+
+    .tariff-container {
+        flex-direction: column; /* Тарифы в столбик */
+        align-items: center; /* Центрируем тарифы */
+    }
+
+    .our-rates h1 {
+        font-size: 40px; /* Уменьшаем размер заголовка */
+        margin-bottom: 30px; /* Добавляем отступ снизу */
+        padding: 0px 0px 0px 0px;
+    }
+
+    .tariff h2 {
+        font-size: 32px; /* Увеличиваем размер заголовка тарифа */
+        margin: 20px 0; /* Увеличиваем отступы */
+    }
+
+    .tariff .tariff-header p {
+        font-size: 18px; /* Уменьшаем размер текста */
+    }
+
+    .price-info .old-price {
+        font-size: 28px; /* Уменьшаем размер старой цены */
+    }
+
+    .price-info .price {
+        font-size: 30px; /* Уменьшаем размер новой цены */
+    }
+
+    .tariff-image {
+        width: 100px; /* Увеличиваем размер изображения */
+        height: 100px;
+    }
+
+    .tariff-features li {
+        font-size: 18px; /* Уменьшаем размер текста в списке */
+        padding: 10px 0 10px 30px; /* Увеличиваем отступы */
+    }
+
+    .more-details {
+        font-size: 18px; /* Увеличиваем размер текста кнопки */
+        padding: 15px 40px; /* Увеличиваем отступы кнопки */
+        margin-top: 30px; /* Увеличиваем отступ сверху */
+    }
+
+    .tariff-include p {
+        font-size: 22px; /* Уменьшаем размер заголовка "Включено" */
+        padding: 30px 0 0 0; /* Уменьшаем отступ сверху */
+    }
+
+    .installment {
+        font-size: 18px; /* Увеличиваем размер текста */
+    }
+}
+
+/* Адаптация для экранов меньше 768px */
+@media (max-width: 768px) {
+    .our-rates h1 {
+        font-size: 36px; /* Уменьшаем размер заголовка */
+        padding: 0px 0px 0px 0px;
+    }
+
+    .tariff h2 {
+        font-size: 28px; /* Уменьшаем размер заголовка тарифа */
+    }
+
+    .tariff .tariff-header p {
+        font-size: 16px; /* Уменьшаем размер текста */
+    }
+
+    .price-info .old-price {
+        font-size: 24px; /* Уменьшаем размер старой цены */
+    }
+
+    .price-info .price {
+        font-size: 26px; /* Уменьшаем размер новой цены */
+    }
+
+    .tariff-image {
+        width: 80px; /* Уменьшаем размер изображения */
+        height: 80px;
+    }
+
+    .tariff-features li {
+        font-size: 16px; /* Уменьшаем размер текста в списке */
+    }
+
+    .more-details {
+        font-size: 16px; /* Уменьшаем размер текста кнопки */
+        padding: 10px 20px; /* Уменьшаем отступы кнопки */
+    }
 }
 
 

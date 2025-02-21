@@ -41,7 +41,7 @@
 }
 
 .authorization_image {
-    width: 75%;
+    width: 65%;
     height: auto;
     background-color: transparent;
 }
@@ -72,7 +72,7 @@
     display: flex;
     justify-content: space-between;
     margin-bottom: 40px;
-    max-width: 500px
+    max-width: 600px
 }
 
 .button-group button {
@@ -114,7 +114,7 @@
     flex-direction: column;
     align-items: flex-start;
     width: 100%;
-    max-width: 700px;
+    max-width: 600px;
     margin-bottom: 20px;
     box-sizing: border-box; /* Добавлено */
 }
@@ -127,7 +127,7 @@
 
 .placeholder input {
     width: 100%;
-    max-width: 500px;
+    min-width: 600px;
     padding: 15px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
@@ -140,7 +140,7 @@
 .placeholder button {
     width: 100%;
     height: 55px;
-    max-width: 500px;
+    max-width: 600px;
     padding: 10px;
     background-color: #5970ff;
     color: white;
@@ -163,6 +163,7 @@
 
 /* Ссылка на восстановление пароля */
 .links {
+    align-self: center;
     max-width: 500px;
     margin: 15px 0;
 }
@@ -216,4 +217,207 @@
 
 .social-buttons button:hover img {
     transform: scale(1.1); /* Увеличение иконок при наведении */
+}
+
+@media (max-width: 1630px) {
+    .text-content h1 {
+        font-size: 50px; /* Возвращаем исходный размер заголовка */
+    }
+
+    .image-section {
+        padding: 0 0 0 100px; /* Возвращаем исходные отступы */
+    }
+
+    .authorization_image {
+        width: 65%; /* Возвращаем исходную ширину изображения */
+    }
+
+    .lock-image {
+        width: 85%;
+    }
+
+    .placeholder {
+        max-width: 550px;
+    }
+
+    .placeholder p{
+        font-size: 16px;
+    }
+
+    .placeholder input {
+        width: 100%;
+        min-width: 550px;
+    }
+
+    .button-group {
+        max-width: 550px
+    }
+}
+
+@media (max-width: 1300px) {
+    .text-content h1 {
+        font-size: 35px; /* Возвращаем исходный размер заголовка */
+    }
+
+    .image-section {
+        padding: 0 0 0 100px; /* Возвращаем исходные отступы */
+    }
+
+    .authorization_image {
+        width: 65%; /* Возвращаем исходную ширину изображения */
+    }
+
+    .lock-image {
+        width: 65%;
+    }
+
+    .placeholder {
+        max-width: 400px;
+    }
+
+    .placeholder p{
+        font-size: 16px;
+    }
+
+    .placeholder input {
+        width: 100%;
+        min-width: 400px;
+    }
+
+    .button-group {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 40px;
+        max-width: 400px
+    }
+
+    .button-group button {
+        font-size: 18px;
+    }
+
+    .social-buttons button {
+        width: 80%;
+    }
+
+
+}
+
+@media (max-width: 1050px) {
+    .text-content h1 {
+        font-size: 30px; /* Возвращаем исходный размер заголовка */
+    }
+
+    .image-section {
+        padding: 0 0 0 0px; /* Возвращаем исходные отступы */
+    }
+
+    .authorization_image {
+        width: 65%; /* Возвращаем исходную ширину изображения */
+    }
+
+    .lock-image {
+        width: 65%;
+    }
+
+    .placeholder {
+        max-width: 350px;
+    }
+
+    .placeholder p{
+        font-size: 16px;
+    }
+
+    .placeholder input {
+        width: 100%;
+        min-width: 350px;
+    }
+
+    .button-group {
+        max-width: 350px
+    }
+
+    .button-group button {
+        font-size: 18px;
+    }
+
+    .social-buttons button {
+        width: 80%;
+    }
+}
+
+
+@media (max-width: 880px) {
+    .authorization {
+        flex-direction: column; /* Вертикальное расположение */
+        padding: 20px 0; /* Уменьшаем отступы */
+        align-items: center; /* Центрируем элементы */
+    }
+
+    .content {
+        flex-direction: column; /* Вертикальное расположение */
+        padding: 0 20px; /* Уменьшаем отступы */
+        align-items: center; /* Центрируем элементы */
+        width: 100%; /* Занимает всю ширину */
+    }
+
+    .text-content {
+        align-self: flex-start;
+        margin-right: 0; /* Убираем отступ */
+        order: 1; /* Заголовок идет первым */
+    }
+
+    .text-content h1 {
+        padding-left: 20px;
+        align-items: flex-start;
+        font-size: 30px; /* Уменьшаем размер заголовка */
+        margin-bottom: 20px; /* Добавляем отступ */
+    }
+
+    .image-lock {
+        align-items: center;
+        order: 2; /* Изображение замка идет вторым */
+        padding: 0; /* Убираем отступы */
+        margin-bottom: 20px; /* Добавляем отступ */
+    }
+
+
+    .login-container {
+        order: 3; /* Форма входа идет третьей */
+        padding: 20px; /* Уменьшаем отступы */
+        width: 100%; /* Занимает всю ширину */
+        max-width: 500px; /* Ограничиваем максимальную ширину */
+    }
+
+    .image-section {
+        order: 4; /* Основное изображение идет последним */
+        padding: 0; /* Убираем отступы */
+        margin-top: 20px; /* Добавляем отступ */
+        width: 100%; /* Занимает всю ширину */
+        text-align: center; /* Центрируем изображение */
+    }
+
+    .authorization_image {
+        width: 100%; /* Изображение занимает всю ширину */
+        max-width: 400px; /* Ограничиваем максимальную ширину */
+    }
+
+    .button-group {
+        max-width: 100%; /* Кнопки занимают всю ширину */
+    }
+
+    .placeholder {
+        max-width: 100%; /* Форма занимает всю ширину */
+    }
+
+    .placeholder input {
+        min-width: 100%; /* Поля ввода занимают всю ширину */
+    }
+
+    .social-login {
+        align-items: center; /* Центрируем социальные кнопки */
+    }
+
+    .social-buttons {
+        justify-content: center; /* Центрируем кнопки */
+    }
 }

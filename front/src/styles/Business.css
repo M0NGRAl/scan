@@ -1,5 +1,5 @@
 .tariff.business .tariff-info .tariff-include {
-    padding-top: 30px !important;
+
 }
 
 .tariff.business .tariff-header{
@@ -17,6 +17,18 @@
 .tariff.business .tariff-header p {
     color: white;
 
+}
+
+@media (max-width: 1537px) {
+    .tariff.business .tariff-info .tariff-include {
+
+    }
+}
+
+@media (max-width: 1395px) {
+    .tariff.business .tariff-info .tariff-include {
+
+    }
 }
 
 
