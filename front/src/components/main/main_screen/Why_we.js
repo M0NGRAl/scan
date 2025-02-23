@@ -29,9 +29,8 @@ const WhyWe = () => {
     const extendedItems = [...carouselItems.slice(-2), ...carouselItems, ...carouselItems.slice(0, 2)];
 
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [slidesToShow, setSlidesToShow] = useState(3); // По умолчанию 3 слайда
+    const [slidesToShow, setSlidesToShow] = useState(3);
 
-    // Определяем количество слайдов в зависимости от ширины экрана
     useEffect(() => {
         const handleResize = () => {
 
@@ -45,11 +44,10 @@ const WhyWe = () => {
 
         };
 
-        handleResize(); // Вызываем сразу при загрузке
-        window.addEventListener('resize', handleResize); // Следим за изменением размера окна
-
+        handleResize();
+        window.addEventListener('resize', handleResize);
         return () => {
-            window.removeEventListener('resize', handleResize); // Очищаем слушатель
+            window.removeEventListener('resize', handleResize);
         };
     }, []);
 
@@ -57,7 +55,7 @@ const WhyWe = () => {
     const handlePrev = () => {
         setCurrentIndex((prevIndex) => {
             if (prevIndex === 0) {
-                return extendedItems.length - slidesToShow - 2; // Сдвиг на два элемента назад
+                return extendedItems.length - slidesToShow - 2;
             }
             return prevIndex - 1;
         });
@@ -66,7 +64,7 @@ const WhyWe = () => {
     const handleNext = () => {
         setCurrentIndex((prevIndex) => {
             if (prevIndex >= extendedItems.length - slidesToShow - 2) {
-                return 2; // Сбрасываем на первый "настоящий" элемент
+                return 2;
             }
             return prevIndex + 1;
         });
@@ -94,7 +92,7 @@ const WhyWe = () => {
                             key={index}
                             className="carousel-slide"
                             style={{
-                                flex: `0 0 ${100 / slidesToShow}%`, // Ширина слайда
+                                flex: `0 0 ${100 / slidesToShow}%`,
                             }}
                         >
                             <img className='carousel-image' src={item.image} alt={item.description} />

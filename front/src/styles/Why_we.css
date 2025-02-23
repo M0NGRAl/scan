@@ -8,16 +8,13 @@
     margin-top: 50px;
 }
 
-/* Контейнер карусели */
 .carousel-container {
     position: relative;
-    width: 80%; /* Ширина карусели */
+    width: 80%;
     margin: 0 auto;
     overflow: hidden;
-
 }
 
-/* Слайды */
 .carousel-slides {
     display: flex;
     transition: transform 0.5s ease-in-out;
@@ -36,8 +33,6 @@
     border-radius: 8px;
 }
 
-
-
 .carousel-slide p {
     white-space: pre-line;
     margin: 5px 0;
@@ -45,7 +40,6 @@
     text-align: center;
 }
 
-/* Кнопки управления */
 .carousel-button {
     position: absolute;
     top: 50%;
@@ -79,49 +73,44 @@
 }
 
 .carousel-button {
-    position: absolute; /* Абсолютное позиционирование */
-    top: 50%; /* Центрирование вертикально */
-    transform: translateY(-50%); /* Корректировка вертикального центрирования */
-    background: transparent; /* Прозрачный фон */
-    border: none; /* Нет границы */
-    padding: 0; /* Нет внутренних отступов */
-    cursor: pointer; /* Указатель курсора */
-    font-size: 24px; /* Размер стрелок */
-    color: #000; /* Цвет текста (стрелок) */
-    outline: none; /* Убираем контур при фокусе */
-    transition: transform 0.2s ease-in-out; /* Плавный переход для трансформации */
-    appearance: none; /* Отключаем стандартный стиль браузера */
-    -webkit-appearance: none; /* Для старых версий Safari */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-size: 24px;
+    color: #000;
+    outline: none;
+    transition: transform 0.2s ease-in-out;
+    appearance: none;
+    -webkit-appearance: none;
 }
 
-/* Кнопка "Назад" */
 .carousel-prev {
-    left: 5px; /* Фиксированное положение слева */
+    left: 5px;
 }
 
-/* Кнопка "Вперед" */
 .carousel-next {
     right: 5px;
-    background: transparent; /* Явно указываем прозрачный фон */
-    border: none;/* Фиксированное положение справа */
+    background: transparent;
+    border: none;
 }
 
-/* При наведении на кнопку */
 .carousel-button:hover {
     transform: translateY(-50%) scale(1.2);
-    background: transparent; /* Явно указываем прозрачный фон */
-    border: none;/* Увеличиваем размер, но сохраняем вертикальное центрирование */
+    background: transparent;
+    border: none;
 }
 
-/* При нажатии на кнопку */
 .carousel-button:active {
-    transform: translateY(-50%) scale(1.4); /* Ещё больше увеличиваем размер */
+    transform: translateY(-50%) scale(1.4);
 }
 
 @media (max-width: 1400px) {
     .why-we .text-content h1 {
         font-size: 50px;
-        padding: 30px 0 30px 30px;
     }
 
     .why-we .carousel-slide p {
@@ -130,6 +119,9 @@
 }
 
 @media (max-width: 1200px) {
+    .why-we .text-content h1 {
+        padding-left: 30px;
+    }
 
     .why-we .text-content h1 {
         font-size: 50px;
@@ -141,7 +133,7 @@
     }
 }
 
-@media (max-width: 980px) {
+@media (max-width: 992px) {
 
     .why-we .text-content h1 {
         font-size: 40px;
@@ -161,9 +153,7 @@
     }
 }
 
-
 @media (max-width: 786px) {
-
     .why-we .text-content h1 {
         font-size: 30px;
 

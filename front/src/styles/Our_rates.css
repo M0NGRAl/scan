@@ -50,9 +50,9 @@
 }
 
 .tariff h2 {
-    font-size: 36px; /* Увеличиваем размер шрифта */
+    font-size: 36px;
     font-weight: bold;
-    margin: 15px 0; /* Увеличиваем отступы */
+    margin: 15px 0;
     padding: 0px 0px 0px 20px;
 }
 
@@ -189,7 +189,7 @@
 
 
     .our-rates h1 {
-        font-size: 50px; /* Уменьшаем размер заголовка */
+        font-size: 50px;
     }
     .tariff-include p{
         font-size: 24px;
@@ -236,111 +236,120 @@
 
 /* Адаптация для экранов меньше 980px */
 @media (max-width: 1200px) {
+    .our-rates {
+        padding-left: 30px;
+    }
+
     .rates-container {
         display: flex;
         flex-direction: column;
-        align-items: center; /* Центрируем тарифы */
-        gap: 30px; /* Добавляем отступ между тарифами */
-        width: 90%; /* Уменьшаем ширину контейнера */
-        margin: 0 auto; /* Центрируем контейнер */
+        align-items: center;
+        gap: 30px;
+        width: 90%;
+        margin: 0 auto;
     }
 
     .tariff {
-        width: 100%; /* Тарифы занимают всю ширину */
-        height: auto; /* Убираем фиксированную высоту */
-        max-width: 600px; /* Ограничиваем максимальную ширину */
-        margin-bottom: 20px; /* Добавляем отступ снизу */
+        width: 100%;
+        height: auto;
+        max-width: 600px;
+        margin-bottom: 20px;
     }
 
     .tariff-container {
-        flex-direction: column; /* Тарифы в столбик */
-        align-items: center; /* Центрируем тарифы */
+        flex-direction: column;
+        align-items: center;
     }
 
     .our-rates h1 {
-        font-size: 40px; /* Уменьшаем размер заголовка */
-        margin-bottom: 30px; /* Добавляем отступ снизу */
+        font-size: 40px;
+        margin-bottom: 30px;
         padding: 0px 0px 0px 0px;
     }
 
     .tariff h2 {
-        font-size: 32px; /* Увеличиваем размер заголовка тарифа */
-        margin: 20px 0; /* Увеличиваем отступы */
+        font-size: 32px;
+        margin: 20px 0;
     }
 
     .tariff .tariff-header p {
-        font-size: 18px; /* Уменьшаем размер текста */
+        font-size: 18px;
     }
 
     .price-info .old-price {
-        font-size: 28px; /* Уменьшаем размер старой цены */
+        font-size: 28px;
     }
 
     .price-info .price {
-        font-size: 30px; /* Уменьшаем размер новой цены */
+        font-size: 30px;
     }
 
     .tariff-image {
-        width: 100px; /* Увеличиваем размер изображения */
+        width: 100px;
         height: 100px;
     }
 
     .tariff-features li {
-        font-size: 18px; /* Уменьшаем размер текста в списке */
-        padding: 10px 0 10px 30px; /* Увеличиваем отступы */
+        font-size: 18px;
+        padding: 10px 0 10px 30px;
     }
 
     .more-details {
-        font-size: 18px; /* Увеличиваем размер текста кнопки */
-        padding: 15px 40px; /* Увеличиваем отступы кнопки */
-        margin-top: 30px; /* Увеличиваем отступ сверху */
+        font-size: 18px;
+        padding: 15px 40px;
+        margin-top: 30px;
     }
 
     .tariff-include p {
-        font-size: 22px; /* Уменьшаем размер заголовка "Включено" */
-        padding: 30px 0 0 0; /* Уменьшаем отступ сверху */
+        font-size: 22px;
+        padding: 30px 0 0 0;
     }
 
     .installment {
-        font-size: 18px; /* Увеличиваем размер текста */
+        font-size: 18px;
     }
 }
 
-/* Адаптация для экранов меньше 768px */
+@media (max-width: 980px) {
+    .our-rates {
+        padding-left: 20px;
+    }
+}
+
 @media (max-width: 768px) {
     .our-rates h1 {
-        font-size: 36px; /* Уменьшаем размер заголовка */
+        font-size: 36px;
         padding: 0px 0px 0px 0px;
     }
 
     .tariff h2 {
-        font-size: 28px; /* Уменьшаем размер заголовка тарифа */
+        font-size: 28px;
     }
 
     .tariff .tariff-header p {
-        font-size: 16px; /* Уменьшаем размер текста */
+        font-size: 16px;
     }
 
     .price-info .old-price {
-        font-size: 24px; /* Уменьшаем размер старой цены */
+        font-size: 24px;
     }
 
     .price-info .price {
-        font-size: 26px; /* Уменьшаем размер новой цены */
+        font-size: 26px;
     }
 
     .tariff-image {
-        width: 80px; /* Уменьшаем размер изображения */
+        width: 80px;
         height: 80px;
     }
 
     .tariff-features li {
-        font-size: 16px; /* Уменьшаем размер текста в списке */
+        font-size: 16px;
     }
 
     .more-details {
-        font-size: 16px; /* Уменьшаем размер текста кнопки */
-        padding: 10px 20px; /* Уменьшаем отступы кнопки */
+        font-size: 16px;
+        padding: 10px 20px;
     }
 }
 

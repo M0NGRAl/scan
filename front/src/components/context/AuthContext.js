@@ -6,9 +6,9 @@ export const AuthProvider = ({ children }) => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
 
     const isTokenExpired = (expire) => {
-        if (!expire) return true; // Если expire отсутствует, токен считается истекшим
-        const currentTime = Date.now(); // Текущее время в секундах
-        return currentTime > expire; // Сравниваем с expire
+        if (!expire) return true;
+        const currentTime = Date.now()
+        return currentTime > expire;
 
     };
 
@@ -17,24 +17,24 @@ export const AuthProvider = ({ children }) => {
         const expire = localStorage.getItem("expire");
 
         if (token && !isTokenExpired(expire)) {
-            setIsAuthenticated(true); // Токен действителен
+            setIsAuthenticated(true);
         } else {
-            setIsAuthenticated(false); // Токен истек или отсутствует
-            localStorage.removeItem("token"); // Удаляем недействительный токен
-            localStorage.removeItem("expire"); // Удаляем expire
+            setIsAuthenticated(false);
+            localStorage.removeItem("token");
+            localStorage.removeItem("expire");
         }
     }, []);
 
     const login = (token, expire) => {
-        localStorage.setItem("token", token); // Сохраняем токен
-        localStorage.setItem("expire", expire); // Сохраняем время истечения
-        setIsAuthenticated(true); // Устанавливаем аутентификацию
+        localStorage.setItem("token", token);
+        localStorage.setItem("expire", expire);
+        setIsAuthenticated(true);
     };
 
     const logout = () => {
-        setIsAuthenticated(false); // Сбрасываем аутентификацию
-        localStorage.removeItem("token"); // Удаляем токен
-        localStorage.removeItem("expire"); // Удаляем время истечения
+        setIsAuthenticated(false);
+        localStorage.removeItem("token");
+        localStorage.removeItem("expire");
     };
 
     return (

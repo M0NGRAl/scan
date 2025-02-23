@@ -19,8 +19,8 @@ const Authorization = () => {
     const {login: authLogin} = useContext(AuthContext);
     const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-    const phoneRegex = /^[\+]?[0-9]{10,15}$/; // Номер телефона
-    const loginRegex = /^[a-zA-Z0-9_]{3,20}$/; // Логин
+    const phoneRegex = /^[\+]?[0-9]{10,15}$/;
+    const loginRegex = /^[a-zA-Z0-9_]{3,20}$/;
 
     useEffect(() => {
         const handleResize = () => {
@@ -28,10 +28,10 @@ const Authorization = () => {
         };
 
         handleResize(); // Вызываем сразу при загрузке
-        window.addEventListener('resize', handleResize); // Следим за изменением размера окна
+        window.addEventListener('resize', handleResize);
 
         return () => {
-            window.removeEventListener('resize', handleResize); // Очищаем слушатель
+            window.removeEventListener('resize', handleResize);
         };
     }, []);
     const handleLoginChange = (e) => {

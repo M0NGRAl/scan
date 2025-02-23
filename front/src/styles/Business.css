@@ -1,11 +1,5 @@
-.tariff.business .tariff-info .tariff-include {
-
-}
-
 .tariff.business .tariff-header{
-
     background-color: black;
-
 }
 
 .tariff.business h2{
@@ -13,23 +7,10 @@
 
 }
 
-
 .tariff.business .tariff-header p {
     color: white;
-
 }
 
-@media (max-width: 1537px) {
-    .tariff.business .tariff-info .tariff-include {
-
-    }
-}
-
-@media (max-width: 1395px) {
-    .tariff.business .tariff-info .tariff-include {
-
-    }
-}
 
 
 

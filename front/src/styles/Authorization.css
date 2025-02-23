@@ -46,7 +46,6 @@
     background-color: transparent;
 }
 
-/* Стили для изображения замка */
 .image-lock {
     display: flex;
     align-items: flex-start;
@@ -55,19 +54,17 @@
     margin-bottom: auto;
 }
 
-/* Контейнер для формы входа */
 .login-container {
-    flex: 0.4; /* 35% ширины */
+    flex: 0.4;
     border-radius: 8px;
     background-color: white;
     border: none;
     text-align: center;
-    padding: 100px 10px 0px 10px; /* Убедитесь, что padding симметричен */
+    padding: 100px 10px 0px 10px;
     margin-bottom: auto;
-    box-sizing: border-box; /* Добавлено */
+    box-sizing: border-box;
 }
 
-/* Группа кнопок Войти/Зарегистрироваться */
 .button-group {
     display: flex;
     justify-content: space-between;
@@ -91,8 +88,8 @@
     border-bottom: 4px solid #029491;
     padding: 10px 0;
     font-size: 16px;
-    flex: 0.7; /* Кнопка "Войти" занимает меньше места */
-    margin-right: 30px; /* Отступ между кнопками */
+    flex: 0.7;
+    margin-right: 30px;
 }
 
 .register-button {
@@ -101,12 +98,9 @@
     color: #808080;
     padding: 10px 0;
     font-size: 16px;
-    flex: 1; /* Кнопка "Зарегистрироваться" занимает оставшееся пространство */
+    flex: 1;
     border-bottom: 4px solid #808080;
 }
-
-
-
 
 /* Поля ввода */
 .placeholder {
@@ -116,7 +110,7 @@
     width: 100%;
     max-width: 600px;
     margin-bottom: 20px;
-    box-sizing: border-box; /* Добавлено */
+    box-sizing: border-box;
 }
 
 .placeholder p{
@@ -133,8 +127,8 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 16px;
-    box-sizing: border-box; /* Добавлено */
-    text-align: left; /* Добавлено */
+    box-sizing: border-box;
+    text-align: left;
 }
 
 .placeholder button {
@@ -152,16 +146,15 @@
 }
 
 .error-input {
-    border: 2px solid red !important;/* Красная граница */
-    color: red; /* Красный текст */
+    border: 2px solid red !important;
+    color: red;
 }
 
 .placeholder button:disabled {
-    background-color: #acb8ff; /* Серый цвет для неактивной кнопки */
-    cursor: not-allowed; /* Курсор "недоступно" */
+    background-color: #acb8ff;
+    cursor: not-allowed;
 }
 
-/* Ссылка на восстановление пароля */
 .links {
     align-self: center;
     max-width: 500px;
@@ -210,26 +203,26 @@
 }
 
 .social-buttons button img {
-    width: 70px; /* Размер иконок */
+    width: 70px;
     height: 20px;
     transition: transform 0.3s ease;
 }
 
 .social-buttons button:hover img {
-    transform: scale(1.1); /* Увеличение иконок при наведении */
+    transform: scale(1.1);
 }
 
 @media (max-width: 1630px) {
     .text-content h1 {
-        font-size: 50px; /* Возвращаем исходный размер заголовка */
+        font-size: 50px;
     }
 
     .image-section {
-        padding: 0 0 0 100px; /* Возвращаем исходные отступы */
+        padding: 0 0 0 100px;
     }
 
     .authorization_image {
-        width: 65%; /* Возвращаем исходную ширину изображения */
+        width: 65%;
     }
 
     .lock-image {
@@ -256,15 +249,15 @@
 
 @media (max-width: 1300px) {
     .text-content h1 {
-        font-size: 35px; /* Возвращаем исходный размер заголовка */
+        font-size: 35px;
     }
 
     .image-section {
-        padding: 0 0 0 100px; /* Возвращаем исходные отступы */
+        padding: 0 0 0 100px;
     }
 
     .authorization_image {
-        width: 65%; /* Возвращаем исходную ширину изображения */
+        width: 65%;
     }
 
     .lock-image {
@@ -304,15 +297,15 @@
 
 @media (max-width: 1050px) {
     .text-content h1 {
-        font-size: 30px; /* Возвращаем исходный размер заголовка */
+        font-size: 30px;
     }
 
     .image-section {
-        padding: 0 0 0 0px; /* Возвращаем исходные отступы */
+        padding: 0 0 0 0px;
     }
 
     .authorization_image {
-        width: 65%; /* Возвращаем исходную ширину изображения */
+        width: 65%;
     }
 
     .lock-image {
@@ -348,76 +341,76 @@
 
 @media (max-width: 880px) {
     .authorization {
-        flex-direction: column; /* Вертикальное расположение */
-        padding: 20px 0; /* Уменьшаем отступы */
-        align-items: center; /* Центрируем элементы */
+        flex-direction: column;
+        padding: 20px 0;
+        align-items: center;
     }
 
     .content {
-        flex-direction: column; /* Вертикальное расположение */
-        padding: 0 20px; /* Уменьшаем отступы */
-        align-items: center; /* Центрируем элементы */
-        width: 100%; /* Занимает всю ширину */
+        flex-direction: column;
+        padding: 0 20px;
+        align-items: center;
+        width: 100%;
     }
 
     .text-content {
         align-self: flex-start;
-        margin-right: 0; /* Убираем отступ */
-        order: 1; /* Заголовок идет первым */
+        margin-right: 0;
+        order: 1;
     }
 
     .text-content h1 {
         padding-left: 20px;
         align-items: flex-start;
-        font-size: 30px; /* Уменьшаем размер заголовка */
-        margin-bottom: 20px; /* Добавляем отступ */
+        font-size: 30px;
+        margin-bottom: 20px;
     }
 
     .image-lock {
         align-items: center;
-        order: 2; /* Изображение замка идет вторым */
-        padding: 0; /* Убираем отступы */
-        margin-bottom: 20px; /* Добавляем отступ */
+        order: 2;
+        padding: 0;
+        margin-bottom: 20px;
     }
 
 
     .login-container {
-        order: 3; /* Форма входа идет третьей */
-        padding: 20px; /* Уменьшаем отступы */
-        width: 100%; /* Занимает всю ширину */
-        max-width: 500px; /* Ограничиваем максимальную ширину */
+        order: 3;
+        padding: 20px;
+        width: 100%;
+        max-width: 500px;
     }
 
     .image-section {
-        order: 4; /* Основное изображение идет последним */
-        padding: 0; /* Убираем отступы */
-        margin-top: 20px; /* Добавляем отступ */
-        width: 100%; /* Занимает всю ширину */
-        text-align: center; /* Центрируем изображение */
+        order: 4;
+        padding: 0;
+        margin-top: 20px;
+        width: 100%;
+        text-align: center;
     }
 
     .authorization_image {
-        width: 100%; /* Изображение занимает всю ширину */
-        max-width: 400px; /* Ограничиваем максимальную ширину */
+        width: 100%;
+        max-width: 400px;
     }
 
     .button-group {
-        max-width: 100%; /* Кнопки занимают всю ширину */
+        max-width: 100%;
     }
 
     .placeholder {
-        max-width: 100%; /* Форма занимает всю ширину */
+        max-width: 100%;
     }
 
     .placeholder input {
-        min-width: 100%; /* Поля ввода занимают всю ширину */
+        min-width: 100%;
     }
 
     .social-login {
-        align-items: center; /* Центрируем социальные кнопки */
+        align-items: center;
     }
 
     .social-buttons {
-        justify-content: center; /* Центрируем кнопки */
+        justify-content: center;
     }
 }

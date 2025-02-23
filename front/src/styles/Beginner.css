@@ -14,11 +14,11 @@
 
 
 .in_personal_account {
-    align-self: center; /* Выравниваем кнопку по центру */
-    margin-top: 20px; /* Увеличиваем отступы */
-    margin-bottom: 15px; /* Увеличиваем отступы */
-    padding: 15px 30px; /* Увеличиваем padding */
-    font-size: 18px; /* Увеличиваем размер шрифта */
+    align-self: center;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    padding: 15px 30px;
+    font-size: 18px;
     color: #fff;
     background-color: #666;
     border: none;
@@ -34,9 +34,9 @@
 
 @media (max-width: 1395px) {
     .in_personal_account {
-        margin-top: 18px; /* Увеличиваем отступы */
-        margin-bottom: 10px; /* Увеличиваем отступы */
-        padding: 10px 25px; /* Увеличиваем padding */
+        margin-top: 18px;
+        margin-bottom: 10px;
+        padding: 10px 25px;
         font-size: 16px
     }
 }

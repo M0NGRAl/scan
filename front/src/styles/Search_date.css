@@ -43,18 +43,18 @@
 }
 
 .search-button:active {
-    background-color: #3349a3; /* Ещё более тёмный синий при нажатии */
+    background-color: #3349a3;
     transform: scale(0.98);
 }
 
 .search-button:hover:not(:disabled) {
-    background-color: #0056b3; /* Цвет фона при наведении (только для активной кнопки) */
+    background-color: #0056b3;
 }
 
 .search-button:disabled {
-    background-color: #cccccc; /* Серый цвет фона для заблокированной кнопки */
-    color: #666666; /* Серый цвет текста */
-    cursor: not-allowed; /* Курсор "недоступно" */
+    background-color: #cccccc;
+    color: #666666;
+    cursor: not-allowed;
 }
 
 .search-image{
@@ -67,11 +67,8 @@
     .search-image{
         width:600px;
         padding: 0px 10px 0px 50px;
-
     }
 }
-
-
 
 @media (max-width: 1400px) {
     .search-image{
@@ -84,8 +81,12 @@
     .information p {
         font-size: 20px;
     }
+}
 
-
+@media (max-width: 1200px) {
+    .information {
+        padding-left: 30px;
+    }
 }
 
 @media (max-width: 992px) {
@@ -97,8 +98,8 @@
 
     .information {
         padding: 20px;
-        text-align: left; /* Текст остается слева */
-        width: 100%; /* Занимает всю ширину */
+        text-align: left;
+        width: 100%;
     }
 
     .information h1 {
@@ -110,8 +111,8 @@
     }
 
     .search-button {
-        display: block; /* Делаем кнопку блочным элементом */
-        margin: 0 auto; /* Центрируем кнопку */
+        display: block;
+        margin: 0 auto;
     }
 
     .search-image {
@@ -119,7 +120,6 @@
         height: auto;
         padding: 20px;
     }
-
 }
 
 @media (max-width: 768px) {
@@ -137,7 +137,9 @@
         padding: 20px;
     }
 
-
-
+    .search-button {
+        padding: 5px 10px;
+        font-size: 18px;
+    }
 }
 

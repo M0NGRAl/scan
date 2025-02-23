@@ -59,24 +59,21 @@
 .field-input {
     display: flex;
     flex-direction: row;
-    gap: 20px; /* Добавляем отступ между блоками */
-    width: 100%; /* Занимает всю доступную ширину */
+    width: 100%;
 }
 
-/* Основной контейнер для всех инпутов */
 .inputs {
     background-color: #fff;
-    width: 50%; /* Увеличиваем ширину */
-    max-width: 600px; /* Увеличиваем максимальную ширину */
+    width: 50%;
+    max-width: 600px;
 }
 
-/* Стили для каждого блока с инпутом */
 .inn-input,
 .tonality-input,
 .quantity-input,
 .dates-input {
     margin-bottom: 50px;
-    width: 80%; /* Занимает всю ширину контейнера */
+    width: 80%;
 }
 
 /* Стили для лейблов */
@@ -95,17 +92,17 @@ label {
     display: flex;
     flex: 1;
     flex-direction: column;
-    gap: 5px; /* Отступ между текстом и полем ввода */
+    gap: 5px;
 }
 
 .date-input-group p {
-    margin: 0; /* Убираем отступы у текста */
-    font-size: 16px; /* Размер текста */
-    color: #333; /* Цвет текста */
+    margin: 0;
+    font-size: 16px;
+    color: #333;
 }
 
 .date-input-group input {
-    width: 90%; /* Ширина поля ввода */
+    width: 90%;
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -113,7 +110,6 @@ label {
     box-sizing: border-box;
 }
 
-/* Стили для текстовых инпутов и селектов */
 input[type="text"],
 input[type="number"],
 input[type="date"],
@@ -123,7 +119,7 @@ select {
     border: 2px solid #ccc;
     border-radius: 4px;
     font-size: 14px;
-    box-sizing: border-box; /* Учитываем padding в ширине */
+    box-sizing: border-box;
 }
 
 /* Стили для чекбоксов */
@@ -191,13 +187,13 @@ select {
 }
 
 .button-section button:disabled {
-    background-color: #ccc; /* Серый цвет для неактивной кнопки */
-    cursor: not-allowed; /* Курсор "недоступно" */
+    background-color: #ccc;
+    cursor: not-allowed;
 }
 
 .error-input {
-    border: 2px solid red !important;/* Красная граница */
-    color: red; /* Красный текст */
+    border: 2px solid red !important;
+    color: red;
 }
 
 .error {
@@ -209,23 +205,365 @@ select {
 
 .main-image-search {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-start;
     padding-bottom: 100px;
-
-
+    padding-right: 150px;
 }
 
 .main-image-search .main-image{
-    /* Увеличиваем ширину изображения */
-    max-width: 100%; /* Чтобы изображение не выходило за пределы контейнера */
+    max-width: 100%;
 }
 
 .required-star {
-    color: #333; /* Стандартный цвет звёздочки */
-    margin-left: 4px; /* Отступ от текста */
+    color: #333;
+    margin-left: 4px;
 }
 
 .red-star {
-    color: red !important; /* Красный цвет звёздочки при ошибке */
+    color: red !important;
+}
+
+
+@media (max-width: 1600px) {
+    .search-header .text-content h1 {
+        font-size: 50px;
+    }
+
+    .search-header .text-content p {
+        font-size: 30px;
+    }
+
+    .images-section {
+        padding-right: 50px;
+        gap: 100px;
+    }
+
+    .list_image {
+        width: 70px;
+        height: 70px;
+    }
+
+    .folders_image {
+        width: 140px;
+        height: 60px;
+    }
+
+    .main-image-search {
+        display: flex;
+        justify-content: flex-end;
+        padding-bottom: 100px;
+    }
+
+
+    .main-image-search .main-image{
+        max-width: 80%;
+    }
+
+    .main-image-search {
+        padding-right: 0px;
+    }
+
+    .selection-fields {
+        min-width: 300px;
+    }
+
+    .inputs {
+        min-width: 350px;;
+    }
+
+    label {
+        font-size: 18px;
+    }
+
+    .selection-fields label {
+        font-size: 18px;
+    }
+    .selection-fields input[type="checkbox"] {
+        width: 20px;
+        height: 20px;
+    }
+
+    /* Стили для галочки */
+    .selection-fields input[type="checkbox"]:checked::before {
+        font-size: 18px;
+        line-height: 18px;
+    }
+
+    /* Стили для кнопки */
+    .button-section {
+        bottom: 0;
+        right: 0;
+        padding: 100px 0px 0px 0px;
+    }
+
+    .button-section p {
+        color: grey;
+        font-size: 16px;
+    }
+
+    .button-section button {
+        padding: 16px 120px;
+        font-size: 18px;
+    }
+}
+
+/* Для экранов меньше 1200px */
+@media (max-width: 1300px) {
+    .search-header .text-content h1 {
+        font-size: 40px;
+    }
+
+    .search-header .text-content p {
+        font-size: 24px;
+    }
+
+    .images-section {
+        padding-right: 50px;
+        gap: 60px;
+    }
+
+    .list_image {
+        width: 50px;
+        height: 50px;
+    }
+
+    .folders_image {
+        width: 110px;
+        height: 50px;
+    }
+
+    .main-image-search .main-image{
+        max-width: 400px;
+        height: 350px;
+    }
+
+    .selection-fields {
+        min-width: 250px;
+    }
+
+    .inputs {
+        min-width: 300px;;
+    }
+
+    label {
+        font-size: 16px;
+    }
+
+    .selection-fields label {
+        font-size: 16px;
+    }
+    .selection-fields input[type="checkbox"] {
+        width: 16px;
+        height: 16px;
+
+    }
+
+    /* Стили для галочки */
+    .selection-fields input[type="checkbox"]:checked::before {
+        font-size: 16px;
+        line-height: 16px;
+    }
+
+    /* Стили для кнопки */
+    .button-section {
+        bottom: 0;
+        right: 0;
+        padding: 100px 0px 0px 0px;
+    }
+
+    .button-section p {
+        color: grey;
+        font-size: 14px;
+    }
+
+    .button-section button {
+        padding: 14px 100px;
+        font-size: 16px;
+    }
+}
+
+/* Для экранов меньше 768px */
+@media (max-width: 900px) {
+    .search-header {
+        flex-direction: column;
+        padding: 20px 0px 0px 20px;
+    }
+
+    .search-header .text-content h1 {
+        font-size: 30px;
+    }
+
+    .search-header .text-content p {
+        font-size: 20px;
+    }
+
+    .images-section {
+        flex-direction: row;
+        gap: 20px;
+        padding-right: 20px;
+        padding-top: 20px;
+        justify-content: center;
+    }
+
+    .list_image {
+        width: 50px;
+        height: 50px;
+    }
+
+    .folders_image {
+        width: 100px;
+        height: 40px;
+    }
+
+    .search-content {
+        flex-direction: column;
+        padding: 0px 0px 0px 20px;
+    }
+
+    .field-input {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .inputs {
+        width: 100%;
+        max-width: 700px;
+    }
+
+    .inn-input,
+    .tonality-input,
+    .quantity-input,
+    .dates-input {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .date-range {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .date-input-group input {
+        width: 80%;
+    }
+
+    .selection-fields {
+        min-width: 100%;
+    }
+
+    .selection-fields label {
+        font-size: 16px;
+    }
+
+    .button-section {
+        padding: 40px 0px 0px 0px;
+        text-align: center;
+
+    }
+
+    .button-section button {
+        width: 70%;
+        padding: 16px 0;
+        font-size: 18px;
+    }
+
+    .main-image-search {
+        justify-content: center;
+        padding-bottom: 30px;
+    }
+
+    .main-image-search .main-image {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-header {
+        padding: 10px 0px 0px 10px;
+    }
+
+    .search-header .text-content h1 {
+        font-size: 24px;
+    }
+
+    .search-header .text-content p {
+        font-size: 16px;
+    }
+
+    .images-section {
+        gap: 10px;
+        padding-right: 10px;
+        padding-top: 10px;
+    }
+
+    .list_image {
+        width: 40px;
+        height: 40px;
+    }
+
+    .folders_image {
+        width: 80px;
+        height: 30px;
+    }
+
+    .search-content {
+        padding: 0px 0px 0px 10px;
+    }
+
+    .field-input {
+        gap: 10px;
+    }
+
+    .inputs {
+        max-width: 100%;
+    }
+
+    .inn-input,
+    .tonality-input,
+    .quantity-input,
+    .dates-input {
+        margin-bottom: 15px;
+    }
+
+    .date-range {
+        gap: 5px;
+    }
+
+    .date-input-group input {
+        width: 80%;
+    }
+
+    .selection-fields label {
+        font-size: 14px;
+    }
+
+    .selection-fields input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+    }
+
+    .selection-fields input[type="checkbox"]:checked::before {
+        font-size: 14px;
+        line-height: 18px;
+    }
+
+    .button-section {
+        padding: 20px 0px 0px 0px;
+    }
+
+    .button-section button {
+        width: 90%;
+        padding: 12px 0;
+        font-size: 16px;
+    }
+
+    .main-image-search {
+        padding-bottom: 20px;
+    }
+
+    .main-image-search .main-image {
+        max-width: 90%;
+    }
 }
 

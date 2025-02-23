@@ -59,8 +59,8 @@ const Search = () => {
                             <select
                                 id="tonality"
                                 name="tonality"
-                                value={tonality} // Привязываем значение состояния
-                                onChange={handleTonalityChange} // Обновляем состояние при изменении
+                                value={tonality}
+                                onChange={handleTonalityChange}
                             >
                                 <option value="any">Любая</option>
                                 <option value="negative">Негативная</option>

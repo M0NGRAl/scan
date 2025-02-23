@@ -1,18 +1,68 @@
+/* Основные стили для футера */
 .footer-container {
-    height: 100px;
+    height: auto;
+    max-height: 120px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px;
     margin: 0px;
     background-color: #029491;
-
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
 }
 
 .info-section {
-    padding: 0px 50px 0px 0px
+    padding: 0px 50px 0px 0px;
+    text-align: end;
 }
 
 .info-section p {
     font-size: 18px;
+    margin: 0;
+}
+
+.logo-image {
+    max-width: 200px;
+}
+
+
+@media (max-height: 1200px) {
+    .logo-section {
+        padding: 0px 0px 0px 30px;
+    }
+}
+
+
+@media (max-width: 992px) {
+    .logo-section {
+        padding: 0px 0px 0px 20px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .logo-section {
+        margin-bottom: 10px;
+    }
+
+    .info-section {
+        padding: 10px;
+    }
+
+    .info-section p {
+        font-size: 14px;
+    }
+
+    .logo-image {
+        max-width: 150px;
+    }
+}
+
+
+@media (max-width: 480px) {
+    .info-section p {
+        font-size: 12px;
+    }
 }

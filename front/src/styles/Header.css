@@ -6,18 +6,18 @@
     position: relative;
 }
 
-.logo-section {
+.header-logo-section {
     padding: 0px 0px 0px 50px;
-    flex: 0 0 auto; /* Логотип не растягивается */
+    flex: 0 0 auto;
 }
 
 .nav-links {
     display: flex;
     gap: 60px;
-    position: absolute; /* Абсолютное позиционирование */
-    left: 50%; /* Сдвигаем навигацию на 50% вправо */
-    transform: translateX(-50%); /* Центрируем навигацию */
-    z-index: 1; /* Убедимся, что навигация выше других элементов */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
 }
 
 .nav-link {
@@ -36,7 +36,25 @@
     display: flex;
     align-items: center;
     gap: 15px;
-    flex: 0 0 auto; /* Кнопки не растягиваются */
+    flex: 0 0 auto;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-left: auto;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: black;
+    font-size: 22px;
+    transition: transform 0.3s ease;
+}
+
+.nav-link:hover {
+    transform: scale(1.1);
 }
 
 .company-info {
@@ -44,9 +62,10 @@
     flex-direction: column;
     align-items: flex-end;
     gap: 10px;
-    padding-right: 60px;
-     /* Отступ между информацией и кнопкой "Выйти" */
+    margin-left: auto;
+    padding-right: 40px;
 }
+
 
 .company-info p {
     font-size: 22px;
@@ -85,7 +104,6 @@
     transform-origin: 50% 50%;
 }
 
-/* Расположение точек по кругу */
 .circle-spinner .dot {
     top: 50%;
     left: 50%;
@@ -109,15 +127,15 @@
 }
 
 .header-login-container {
-    display: flex; /* Используем Flexbox */
-    align-items: center; /* Выравниваем элементы по центру вертикально */
-    gap: 10px; /* Расстояние между элементами */
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .user-info {
     display: flex;
-    flex-direction: column; /* Элементы внутри user-info будут друг под другом */
-    align-items: flex-end; /* Выравниваем по центру горизонтально */
+    flex-direction: column;
+    align-items: flex-end;
     justify-content: flex-end;
 }
 
@@ -126,10 +144,10 @@
 }
 
 .profile-image {
-    width: 70px; /* Уменьшаем размер аватара */
-    height: 70px; /* Уменьшаем размер аватара */
-    border-radius: 50%; /* Делаем аватар круглым */
-    object-fit: cover; /* Чтобы изображение не искажалось */
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
 }
 
 
@@ -179,4 +197,245 @@
     width: 3px;
     height: 55px;
     background-color: rgb(103, 191, 189);
+}
+
+
+
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding-right: 30px;
+}
+
+.hamburger-line {
+    width: 25px;
+    height: 3px;
+    background-color: black;
+}
+
+.mobile-menu {
+    display: none;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    transform: translateY(-100%);
+}
+
+.mobile-menu.open {
+    display: block;
+    transform: translateY(0);
+}
+
+.mobile-menu-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding: 0;
+}
+
+@media (max-width: 1500px) {
+    .nav-links {
+        gap: 30px;
+    }
+
+    .nav-link {
+        font-size: 20px;
+    }
+
+    .company-info p {
+        font-size: 16px;
+    }
+
+    .company-number1, .company-number2 {
+        font-size: 20px;
+    }
+
+    .user-info label {
+        font-size: 20px;
+    }
+
+    .auth-button {
+        font-size: 18px;
+    }
+
+    .auth-link {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .header-container {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .nav-links {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 20px;
+    }
+    .nav-link{
+        font-size: 18px;
+    }
+
+    .auth-buttons {
+        order: 2;
+
+    }
+
+    .header-logo-section {
+        padding-left: 30px;
+    }
+
+    .profile-image {
+        width: 50px;
+        height: 50px;
+    }
+
+    .company-info {
+        padding-right: 20px
+    }
+}
+
+@media (max-width: 1050px) {
+    .nav-links, .auth-buttons {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .company-info {
+        margin-left: 0;
+    }
+
+    .company-info p {
+        font-size: 22px;
+    }
+
+    .nav-link {
+        font-size: 22px;
+    }
+
+    .user-info label {
+        font-size: 22px;
+    }
+
+    .exit-button {
+        font-size: 22px;
+        padding: 5px 10px;
+    }
+
+    .auth-button {
+        padding: 8px 16px;
+        font-size: 23px;
+    }
+
+    .auth-link {
+        font-size: 22px;
+    }
+
+    .separator-line {
+        display: none;
+    }
+
+}
+
+@media (max-width: 768px) {
+    .nav-link {
+        font-size: 18px;
+    }
+
+    .user-info label {
+        font-size: 18px;
+    }
+
+    .exit-button {
+        font-size: 18px;
+        padding: 5px 10px;
+    }
+
+    .company-info p {
+        font-size: 18px;
+    }
+
+    .mobile-menu-content {
+        gap: 20px;
+        padding: 0;
+    }
+
+    .auth-button {
+        padding: 6px 14px;
+        font-size: 18px;
+    }
+
+    .auth-link {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 576px) {
+    .nav-link {
+        font-size: 16px;
+    }
+
+    .user-info label {
+        font-size: 16px;
+    }
+
+    .exit-button {
+        font-size: 16px;
+        padding: 5px 10px;
+    }
+
+
+    .mobile-menu-content {
+        gap: 15px;
+        padding: 0;
+    }
+
+    .header-container {
+        padding: 10px;
+    }
+
+    .header-logo-section {
+        padding-left: 0;
+    }
+
+    .company-info p {
+        font-size: 14px;
+    }
+
+    .company-info {
+        padding-right: 0;
+        margin: 0;
+        gap:0
+    }
+
+    .hamburger-menu {
+        padding-right: 0;
+    }
+
+
+    .logo-image {
+        width: 120px;
+    }
+
+    .company-number1, .company-number2 {
+        font-size: 16px;
+    }
+
+    .auth-button {
+        padding: 6px 14px;
+        font-size: 16px;
+    }
+
+    .auth-link {
+        font-size: 16px;
+    }
 }

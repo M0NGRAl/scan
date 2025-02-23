@@ -28,7 +28,7 @@ const Search_result = () => {
 
             fetchData();
         }
-    }, [documentsData, quantityPublications]); // Добавлена зависимость от quantityPublications
+    }, [documentsData, quantityPublications]);
 
     const fetchDocumentsDetails = async (ids, startIndex) => {
         const idsToFetch = ids.slice(startIndex, startIndex + 6)
@@ -47,20 +47,20 @@ const Search_result = () => {
 
                 const data = await response.json();
                 if (data) {
-                    fetchedPublications.push(data); // Accumulate the fetched data
+                    fetchedPublications.push(data);
                 }
             } catch (error) {
                 console.error(`Ошибка при загрузке ID ${id}:`, error);
             }
         }
-        return fetchedPublications; // Возвращаем новые публикации
+        return fetchedPublications;
     };
 
     // Функция для прокрутки влево
     const scrollLeft = () => {
         if (scrollContainerRef.current) {
             scrollContainerRef.current.scrollBy({
-                left: -200,
+                left: -100,
                 behavior: 'smooth'
             });
         }
@@ -70,7 +70,7 @@ const Search_result = () => {
     const scrollRight = () => {
         if (scrollContainerRef.current) {
             scrollContainerRef.current.scrollBy({
-                left: 200,
+                left: 100,
                 behavior: 'smooth'
             });
         }
@@ -117,7 +117,6 @@ const Search_result = () => {
         });
     };
 
-    // Рендер публикаций
     const renderPublications = () => {
 
         if (isLoadingPublications && !publications || publications.length === 0) {
@@ -125,11 +124,10 @@ const Search_result = () => {
         }
 
         return publications.map((pubGroup, index) => {
-            // pubGroup — это массив с одним объектом. Достаем первый элемент
-            const pub = pubGroup[0]?.ok || pubGroup[0]; // Учитываем структуру ответа
+            const pub = pubGroup[0]?.ok || pubGroup[0];
 
             if (!pub) {
-                return null; // Пропускаем, если данные отсутствуют
+                return null;
             }
 
             return (
@@ -140,7 +138,11 @@ const Search_result = () => {
                             {pub.source.name}
                         </a>
                     </div>
-                    <div className="attributes"></div>
+                    <div className="attributes">
+                        {pub.attributes.isTechNews && <span className="tag tech-news">Технические новости</span>}
+                        {pub.attributes.isAnnouncement && <span className="tag announcement">Анонсы и события</span>}
+                        {pub.attributes.isDigest && <span className="tag digest">Сводки новостей</span>}
+                    </div>
                     <div className="card-content">
                         <h3 className='title'>{extractHtmlFromXml(pub.title?.markup) || "Без названия"}</h3>
                         <div
@@ -166,7 +168,7 @@ const Search_result = () => {
     };
 
     const extractTextFromXml = (xmlString) => {
-        if (!xmlString) return ""; // Если разметка отсутствует, возвращаем пустую строку
+        if (!xmlString) return "";
 
         const parser = new DOMParser();
         const xmlDoc = parser.parseFromString(xmlString, "text/xml");
@@ -181,23 +183,19 @@ const Search_result = () => {
         const parser = new DOMParser();
         const xmlDoc = parser.parseFromString(xmlString, "text/xml");
 
-        // Извлекаем текстовое содержимое
         let textContent = xmlDoc.documentElement.textContent || "";
 
-        // Удаляем все HTML-теги с помощью регулярного выражения
         textContent = textContent.replace(/<[^>]+>/g, "");
 
-        // Удаляем лишние пробелы и спецсимволы
         textContent = textContent.replace(/\s+/g, " ").trim();
 
         return textContent;
     };
 
     const handleShowMore = () => {
-        setQuantityPublications((prev) => prev + 6); // Увеличиваем количество отображаемых публикаций на 5
+        setQuantityPublications((prev) => prev + 6);
     };
 
-    // Проверка, нужно ли показывать кнопку "Показать больше"
     const isShowMoreVisible = documentsData?.items?.length > quantityPublications;
 
     return (

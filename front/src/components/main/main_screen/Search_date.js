@@ -8,20 +8,6 @@ const SearchDate = ({onShowSearch}) => {
     const navigate = useNavigate();
     const {isAuthenticated: isAuthenticated} = useContext(AuthContext);
 
-    useEffect(() => {
-        const handleResize = () => {
-            console.log(window.innerWidth);
-
-
-        };
-
-        handleResize(); // Вызываем сразу при загрузке
-        window.addEventListener('resize', handleResize); // Следим за изменением размера окна
-
-        return () => {
-            window.removeEventListener('resize', handleResize); // Очищаем слушатель
-        };
-    }, []);
 
     return (
         <div className="search_date-container">
